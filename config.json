@@ -1,25 +1,12 @@
 [
-    {
-      "jobCode": "BOE432"
-    },
-    {
-      "concept" : "Facts",
-      "type": "HTML5",
-      "sizes": [
-        {"b"  : "300x250",  "qa"  : "QA/"},
-        {"b"  : "300x600",  "qa"  : "QA/"},
-        {"b"  : "160x600",  "qa"  : "QA/"},
-        {"b"  : "728x90",  "qa"  : "QA/"}
-      ]
-    },
-    {
-      "concept" : "Deceptive",
-      "type": "HTML5",
-      "sizes": [
-        {"b"  : "300x250",  "qa"  : "QA/"},
-        {"b"  : "300x600",  "qa"  : "QA/"},
-        {"b"  : "160x600",  "qa"  : "QA/"},
-        {"b"  : "728x90",  "qa"  : "QA/"}
-      ]
-    }
+  {
+    "jobCode": "JobCode"
+  },
+  {
+    "concept" : "ConceptName",
+    "type": "HTML5",
+    "sizes": [
+      {"b"  : "300x250",  "qa"  : "QA/"}
+    ]
+  }
 ]

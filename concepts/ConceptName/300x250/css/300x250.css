@@ -1,0 +1,65 @@
+@import "resets.css";
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900'); */
+
+/* Main */
+
+body {
+    /* background-color: #fff; */
+}
+#wrapper {
+    width: 298px;
+    height: 248px;
+    border: 1px solid #000;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    /* font-family: 'Lato', sans-serif; */
+    /* font-weight: 900; */
+    /* font-size: 20px; */
+    /* line-height: 30px; */
+    background-color: #fdfce9;
+}
+#banner {
+    width: 298px;
+    height: 248px;
+    overflow: hidden;
+}
+
+
+/* Frames */
+
+#bg, #choose, #lungs, #left-lung, #right-lung, #left-o, #right-o, #text1, #text2, #text3, #text4, #text5, #cta, #ofev, #click-area {
+    position: absolute;
+}
+#choose, #left-o, #right-o, #left-lung, #right-lung, #text1, #text2, #text3, #text4, #text5, #ofev, #cta, #scroll {
+    opacity: 0;
+}
+#choose {
+    top: 132px;
+    left: 13px;
+    width: 265px;
+    height: 53px;
+    background: url('../img/choose.svg') center center no-repeat;
+    background-size: contain;
+}
+
+#cta {
+    top: 84px;
+    left: 16px;
+    width: 144px;
+    height: 37px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 19px;
+    text-align: center;
+    background: #f2650f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 2px;
+}
+#click-area {
+    width: 298px;
+    height: 248px;
+    background-color: rgba(0, 0, 0, 0);
+}
