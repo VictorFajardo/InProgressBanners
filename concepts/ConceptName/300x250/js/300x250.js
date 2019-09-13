@@ -9,70 +9,130 @@ window.onload = function() {
 	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
   // Canvas
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  var img = new Image();
-  var mask = new Image();
-  // Image
-  // new Promise((resolve) => {
-    mask.onload = () => { img.onload = () => null };
-    mask.src = 'img/mask.png';
-    img.src = 'img/woman.png';
-  // })
-  // .then(() => {
-    // ctx.save();
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext("2d");
+  let img = new Image();
+  let mask = new Image();
+  mask.src = 'img/mask.png';
+  img.src = 'img/woman.png';
+  Image
+  new Promise((resolve) => {
+    mask.onload = () => { img.onload = () => resolve() };
+  })
+  .then(() => {
     // ctx.drawImage(img, 0, 0, 700, 625);
-    // ctx.globalCompositeOperation = 'destination-in';
-    // ctx.drawImage(mask, 50, 0, 700, 625);
-    // ctx.restore();
-    // ctx.save();
-    // printingAreas();
-  // });
+    // ctx.globalCompositeOperation = 'source-in';
+    // ctx.drawImage(mask, 0, 0, 700, 625);
+    // ctx.globalCompositeOperation = 'source-over';
+    // addingBase();
 
-  let height = 24;
-  let pointsMatrix = [
-    { x: 245, y: 238, w: 60, h: height },
-    { x: 305, y: 238, w: 40, h: height },
-    { x: 345, y: 238, w: 50, h: height },
-    { x: 395, y: 238, w: 110, h: height }
+    // for (let i = 0; i < matrix.length; i++) {
+    //   ctx.strokeRect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
+    // }
+  });
+
+  let params = {
+    counter: 0,
+    numbers: [0],
+    factor: 0,
+    prev: 0,
+    intro: 4,
+    height: 22
+  };
+  let introText = [
+    { x: 205, y: 238, w: 57, h: params.height },
+    { x: 262, y: 238, w: 40, h: params.height },
+    { x: 302, y: 238, w: 46, h: params.height },
+    { x: 348, y: 238, w: 102, h: params.height }
+  ];
+  let boldText = [
+    { x: 205, y: 238, w: 57, h: params.height },
+    { x: 262, y: 238, w: 40, h: params.height },
+    { x: 302, y: 238, w: 46, h: params.height },
+    { x: 348, y: 238, w: 102, h: params.height },
+
+    { x: 333, y: 105, w: 57, h: params.height },
+    { x: 390, y: 105, w: 46, h: params.height },
+    { x: 436, y: 105, w: 14, h: params.height },
+    { x: 450, y: 105, w: 45, h: params.height },
+    { x: 495, y: 105, w: 42, h: params.height },
+
+    { x: 162, y: 150, w: 62, h: params.height },
+    { x: 224, y: 150, w: 41, h: params.height },
+    { x: 265, y: 150, w: 41, h: params.height },
+    { x: 306, y: 150, w: 100, h: params.height },
+
+    { x: 264, y: 348, w: 38, h: params.height },
+    { x: 302, y: 348, w: 14, h: params.height },
+    { x: 316, y: 348, w: 34, h: params.height },
+    { x: 350, y: 348, w: 88, h: params.height },
+
+    { x: 241, y: 412, w: 54, h: params.height },
+    { x: 295, y: 412, w: 54, h: params.height },
+
+    { x: 152, y: 458, w: 80, h: params.height },
+    { x: 232, y: 458, w: 104, h: params.height }
   ];
 
-  function addingBg() {
-    ctx.save();
-    ctx.globalCompositeOperation = 'source-atop';
+  matrix = introText.concat(boldText.sort(function(a, b){return 0.5 - Math.random()}));
+
+  let addingBase = () => {
+    //normal text
+    ctx.font = "19.8px Arial";
+    ctx.fillText("don't feel sick. Do I have a choice? Why is this happening?", 24, 212);
+    ctx.fillText("What about our trip?", 24, 255);
+    ctx.fillText("\"What am", 454, 255);
+    //bold text
+    ctx.font='bold 23px Arial';
+    ctx.fillText("Who can I talk to?", 337, 125);
+    ctx.fillText("What are my options?", 164, 168);
+    ctx.fillText("How did this happen?", 210, 255);
+    ctx.fillText("Where did I go wrong?", 188, 365);
+    ctx.fillText("Why me?", 244, 430);
+    ctx.fillText("Strong enough?", 154, 474);
+  }
+
+  let addingBg = () => {
+    ctx.globalCompositeOperation = 'source-in';
     ctx.drawImage(img, 0, 0, 700, 625);
-    ctx.globalCompositeOperation = 'destination-in';
-    ctx.drawImage(mask, 50, 0, 700, 625);
-    ctx.restore();
   }
 
-  function printingMask(counter) {
-    console.log(counter);
-    ctx.clearRect(0, 0, 700, 625);
-    ctx.beginPath();
-    for (let i = 0; i < counter; i++) {
-      ctx.rect(pointsMatrix[i]['x'], pointsMatrix[i]['y'], pointsMatrix[i]['w'], pointsMatrix[i]['h']);
+  let printingMask = (counter) => {
+    if(counter == 0) {
+      ctx.clearRect(0, 0, 700, 625);
+    } else if (counter <= matrix.length) {
+      console.log(counter);
+      ctx.clearRect(0, 0, 700, 625);
+      ctx.globalCompositeOperation = 'source-over';
+      addingBase();
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.beginPath();
+      for (let i = 0; i < counter; i++) {
+        ctx.rect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
+      }
+      ctx.fill();
+      ctx.closePath();
+      addingBg();
     }
-    ctx.fill();
-    ctx.closePath();
-    addingBg();
   }
 
-  // printingAreas();
+  let creatingPoints = () => {
+    params.counter = Math.round(params.counter);
+    if(params.prev !== params.counter){
+        if(params.counter > params.intro) {
+          params.factor = params.counter - params.intro + 1;
+          params.numbers[params.counter] = params.numbers[params.counter - 1] + params.factor;
+        } else {
+          params.factor = 0;
+          params.numbers[params.counter] = params.counter;
+        }
+        params.prev = params.counter;
+        printingMask(params.numbers[params.counter]);
+    }
+  }
 
-  
-
-  
-  
   // Animations
   TweenLite.set(canvas, {height: 250, delay: 0}, 0);
-  let myObj = { counter: 0, prev: 0 };
-  TweenLite.to(myObj, 4, {counter: 4, ease: Power0.easeNone, onUpdate: () => {
-    myObj.counter = Math.round(myObj.counter);
-    if(myObj.prev !== myObj.counter){
-      printingMask(myObj.counter);
-      myObj.prev = myObj.counter;
-    }
-  }, delay: 0}, 0);
+  TweenLite.to(params, 3, {counter: 30, ease: Power0.easeNone, onUpdate: creatingPoints, delay: 0}, 0);
   
 }//end
