@@ -3,6 +3,13 @@
     "jobCode": "JobCode"
   },
   {
+    "concept" : "Display",
+    "type": "HTML5",
+    "sizes": [
+      {"b"  : "300x250",  "qa"  : "QA/"}
+    ]
+  },
+  {
     "concept" : "ConceptName",
     "type": "HTML5",
     "sizes": [
