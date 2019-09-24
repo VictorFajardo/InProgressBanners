@@ -2,12 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 /* Main */
 
-body {
-    background-color: #fff;
-}
 #wrapper {
     width: 300px;
-    height: 250px;
+    height: 600px;
     overflow: hidden;
     position: absolute;
     color: #fff;
@@ -16,17 +13,16 @@ body {
     font-size: 16px;
 }
 #banner {
-    width: 298px;
-    height: 248px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, .4);
-    position: relative;
+  width: 298px;
+  height: 598px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, .4);
+  position: relative;
 }
 /* Frames */
-#text11, #text12, #text2, #text3, #text4, #text5, #bg, #one, #woman, #woman1, #blue, #click-area{
+#text11, #text12, #text2, #text3, #text4, #text5, #bg, #one, #woman, #woman1, #blue, #click-area {
     position: absolute;
-    display: block;
-    opacity: 0;
+    opacity: 0;    
 }
 .blue {
     color: #485969;
@@ -41,136 +37,148 @@ body {
 }
 .arrow-right::before {
     content: '';
-    top: 1.5px;
+    top: 2.8px;
     width: 0;
     height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 7px solid #fff;
+    border-top: 5.5px solid transparent;
+    border-bottom: 5.5px solid transparent;
+    border-left: 9px solid #fff;
     position: absolute;
 }
 #blue{
     width: 300px;
-    height: 250px;
+    height: 600px;
     top: 0;
     left: 0;
     opacity: 1;
-}
-#bg{
-    width: 298px;
-    height: 248px;
-    top: 0;
-    left: 0;
 }
 #text11{
-    top: 103px;
-    left: 19px;
+    top: 212px;
+    left: 79px;
     opacity: 1;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 }
 #text12{
-    top: 127px;
-    left: 82px;
+    top: 284px;
+    left: 69px;
     opacity: 1;
     font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 36px;
     font-weight: 700;
-    font-size: 20px;
     white-space: nowrap;
+    text-align: center;
 }
-#text2{
-    top: 62px;
-    right: 28px;
+#text2 {
+    position: absolute;
+    top: 63px;
+    left: 38px;
+    opacity: 0;
+    z-index: 5;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 }
 #text2 span {
     font-weight: 700;
 }
-#text3{
-    top: 19px;
-    left: 142px;
+#woman {
+    position: absolute;
+    background: url("../img/women.png") center center no-repeat;
+    width: 305px;
+    height: 381px;
+    bottom: 0;
+    left: -5px;
+    z-index: 5;
+    opacity: 0;
+}
+#one {
+    position: absolute;
+    background: url("../img/one.png") center center no-repeat;
+    width: 298px;
+    height: 493px;
+    top: 272px;
+    left: 0px;
+    opacity: 0;
+    z-index: 4;
+}
+
+#text3 {
+    position: absolute;
+    top: 72px;
+    left: 18px;
+    opacity: 0;
+    z-index: 6;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 }
 #text3 span {
     font-weight: 700;
 }
 #text4{
-    top: 147px;
-    left: 142px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 6px;
-}
-#one{
-    background: url("../img/one.png") center center no-repeat;
-    width: 200px;
-    height: 200px;
-    top: 0px;
-    left: 0px;
-}
-#woman{
-    background: url("../img/woman.png") center center no-repeat;
-    width: 257px;
-    height: 310px;
-    top: 0px;
-    left: 0px;
-}
-#logo-block{
-    height: 37px;
-    width: 100%;
-    background: #FFFFFF;
     position: absolute;
-    display: block;
-    top: 250px;
+    font-family: 'Montserrat', sans-serif;
+    top: 232px;
+    left: 35px;
+    opacity: 0;
+    z-index: 8;
+    font-size: 9px;
+}
+
+
+#logo{
+  position: absolute;
+  background: url("../img/logo.svg") center center no-repeat;
+  width: 246px;
+  height: 65px;
+  top: 3px;
+  left: 27px;
+  opacity: 0;
+  z-index: 8;
+}
+
+
+#logo-block{
+    /* height: 206px; */
+    width: 298px;
+    position: absolute;
+    top: 598px;
+    z-index: 7;
+    opacity: 1;
 }
 .left-block{
-    width: 61%;
+    width: 100%;
     position: relative;
     float: left;
-}
-.right-block{
-    width: 39%;
-    position: relative;
-    float: left;
-    height: 37px;
+    height: 45px;
     background-color: #f04f24;
 }
-.right-block p {
-    line-height: 37px;
+.left-block p {
+    line-height: 45px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10.2px;
+    font-size: 14.7px;
     font-weight: 700;
-
 }
-.logo{
-    max-width: 77%;
-    margin: 6px 14px;
-    vertical-align: middle;
-}
-.img-fluid{
-    width: 100%;
-    height: auto;
-}
-/* Click tag */
-#click-area{
-    width: 298px;
-    height: 248px;
-}
-/* ISI */
 #scroll{
     position: absolute;
-    top: 287px;
-    width: 300px;
-    height: 50px;
+    top: 643px;
+    width: 298px;
+    height: 56px;
     background: #FFFFFF;
     color: #485969;
     font-size: 7px;
     border-top: 1px solid #485969;
+    z-index: 7;
+    opacity: 1;
 }
+
 a{
     color: #485969;
 }
@@ -183,8 +191,8 @@ a{
 }
 #scroll-wrapper{
     overflow-y: scroll;
-    width: 294px;
-    height: 30px;
+    width: 290px;
+    height: 36px;
     margin: 0 2px;
 }
 #scroll-content{

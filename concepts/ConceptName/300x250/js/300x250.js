@@ -13,22 +13,23 @@ window.onload = function() {
   let ctx = canvas.getContext("2d");
   let img = new Image();
   let mask = new Image();
+  img.src = 'img/woman.jpg';
+  text.src = 'img/text.png';
   mask.src = 'img/mask.png';
-  img.src = 'img/woman.png';
   Image
   new Promise((resolve) => {
-    mask.onload = () => { img.onload = () => resolve() };
+    text.onload = () => { img.onload = () => { mask.onload = () => { resolve() } } };
   })
   .then(() => {
-    // ctx.drawImage(img, 0, 0, 700, 625);
-    // ctx.globalCompositeOperation = 'source-in';
-    // ctx.drawImage(mask, 0, 0, 700, 625);
-    // ctx.globalCompositeOperation = 'source-over';
-    // addingBase();
+    ctx.drawImage(img, 0, 0, 700, 625);
+    ctx.globalCompositeOperation = 'source-in';
+    ctx.drawImage(text, 0, 0, 700, 625);
+    ctx.globalCompositeOperation = 'source-over';
+    addingBase();
 
-    // for (let i = 0; i < matrix.length; i++) {
-    //   ctx.strokeRect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
-    // }
+    for (let i = 0; i < matrix.length; i++) {
+      ctx.strokeRect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
+    }
   });
 
   let params = {
@@ -74,7 +75,8 @@ window.onload = function() {
     { x: 232, y: 458, w: 104, h: params.height }
   ];
 
-  matrix = introText.concat(boldText.sort(function(a, b){return 0.5 - Math.random()}));
+  boldText.sort(function(a, b){return 0.5 - Math.random()});
+  matrix = introText.concat(boldText);
 
   let addingBase = () => {
     //normal text
@@ -101,7 +103,7 @@ window.onload = function() {
     if(counter == 0) {
       ctx.clearRect(0, 0, 700, 625);
     } else if (counter <= matrix.length) {
-      console.log(counter);
+      // console.log(counter);
       ctx.clearRect(0, 0, 700, 625);
       ctx.globalCompositeOperation = 'source-over';
       addingBase();
@@ -119,20 +121,16 @@ window.onload = function() {
   let creatingPoints = () => {
     params.counter = Math.round(params.counter);
     if(params.prev !== params.counter){
-        if(params.counter > params.intro) {
-          params.factor = params.counter - params.intro + 1;
-          params.numbers[params.counter] = params.numbers[params.counter - 1] + params.factor;
-        } else {
-          params.factor = 0;
-          params.numbers[params.counter] = params.counter;
-        }
-        params.prev = params.counter;
-        printingMask(params.numbers[params.counter]);
+      params.factor = Math.round((params.counter + 1) / 4);
+      params.numbers[params.counter] = params.counter == 0 ? 0 : params.numbers[params.counter - 1] + params.factor;
+      params.prev = params.counter;
+      printingMask(params.numbers[params.counter]);
+      // this.console.log(params.counter, params.factor, params.numbers[params.counter]);
     }
   }
 
   // Animations
   TweenLite.set(canvas, {height: 250, delay: 0}, 0);
-  TweenLite.to(params, 3, {counter: 30, ease: Power0.easeNone, onUpdate: creatingPoints, delay: 0}, 0);
+  // TweenLite.to(params, 3, {counter: 30, ease: Power0.easeNone, onUpdate: creatingPoints, delay: 0}, 0);
   
 }//end

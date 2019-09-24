@@ -1,0 +1,225 @@
+@import "resets.css";
+
+/* Main */
+
+
+#wrapper {
+    width: 726px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border:1px solid #000;
+}
+#banner {
+    width: 728px;
+  height: 90px;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+}
+
+.links{
+  text-decoration: underline;
+}
+#blue{
+    position: absolute;
+    background: url("../img/blue-bg.png") center center no-repeat;
+    width: 728px;
+    height: 90px;
+    top:0;
+    left: -1px;
+    opacity: 1;
+    z-index: 4;
+}
+#wall{
+  position: absolute;
+  background: url("../img/wall.jpg") center center no-repeat;
+    width: 728px;
+  height: 90px;
+  top:0;
+  left: -1px;
+  opacity:1;
+  z-index:3;
+}
+#text11{
+    position: absolute;
+    background: url("../img/text11.png") center center no-repeat;
+    width: 728px;
+    height: 57px;
+    top: 17px;
+    left: 2px;
+    opacity: 0;
+    z-index: 6;
+
+}
+#text12{
+    position: absolute;
+    background: url("../img/text12.png") center center no-repeat;
+    width: 728px;
+    height: 27px;
+    top: 299px;
+    left: 0px;
+    opacity: 0;
+    z-index: 5;
+}
+
+#text2{
+    position: absolute;
+    background: url("../img/text2.png") center center no-repeat;
+    width: 508px;
+    height: 90px;
+    left: 175px;
+    opacity: 0;
+    z-index: 5;
+}
+
+
+
+#woman{
+    position: absolute;
+    background: url("../img/women.png") center center no-repeat;
+    width: 210px;
+    height: 142px;
+    top: -5px;
+    left: -5px;
+    z-index: 13;
+    opacity: 0;
+}
+#one{
+    position: absolute;
+    background: url("../img/one.png") center center no-repeat;
+    width: 80px;
+    height: 111px;
+    top: 5px;
+    left: 80px;
+    opacity: 0;
+    z-index: 12;
+}
+
+#text3{
+    position: absolute;
+    background: url("../img/text3.png") center center no-repeat;
+    width: 508px;
+    height: 90px;
+    left: 175px;
+    opacity: 0;
+    z-index: 6;
+}
+#text4{
+    position: absolute;
+    background: url("../img/text5.png") center center no-repeat;
+    width: 508px;
+    height: 90px;
+    left: 25px;
+    opacity: 0;
+    z-index:9;
+}
+
+#text5{
+    position: absolute;
+    background: url("../img/text4.png") center center no-repeat;
+    width: 275px;
+    height: 90px;
+    top:0px;
+    left: 175px;
+    opacity: 0;
+    z-index:9;
+}
+
+#logo{
+  position: absolute;
+  background: url("../img/logo.svg") center center no-repeat;
+  width: 161px;
+  height: 60px;
+  top: -9px;
+  left: 399px;
+  opacity: 0;
+  z-index:18;
+}
+
+
+#logo-block{
+    position: absolute;
+    height: 31px;
+    width: 140px;
+    position: absolute;
+    top: 90px;
+      left: 410px;
+    z-index: 16;
+    opacity: 1;
+}
+.left-block{
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+.img-fluid{
+    width: 100%;
+    height: auto;
+}
+#scroll{
+  position: absolute;
+  top: 0px;
+  width: 175px;
+  height: 90px;
+  background: #FFFFFF;
+  color: #485969;
+  font-size: 7px;
+  border-left: 1px solid #485969;
+  left:760px;
+  top:0px;
+  z-index: 15;
+  opacity: 1;
+}
+
+a{
+    color: #485969;
+}
+#scroll-title{
+    height: 8px;
+    margin: 0px 6px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+#scroll-wrapper{
+    overflow-y: scroll;
+    width: 150px;
+    height: 55px;
+    margin: 0 2px;
+  }
+  #scroll-content{
+    display: block;
+    margin: 0 4px 4px;
+  }
+  #scroll-content p{
+    line-height: 10px;
+    /* padding-bottom: 0.4rem; */
+  }
+  .frame::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background: #e1e1e1;
+    border-radius: 8px;
+    /* border: 2px solid white; */
+  }
+
+  .frame::-webkit-scrollbar:vertical {
+    width: 8px;
+  }
+
+  .frame::-webkit-scrollbar:horizontal {
+    height: 8px;
+  }
+
+  .frame::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    /* border: 2px solid white;  */
+    background-color: #b1b1b1;
+    height: 20px;
+  }
