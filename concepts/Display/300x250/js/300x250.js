@@ -47,6 +47,6 @@ window.onload = function() {
   TweenLite.to(woman, 1, {opacity: 1, scale: 0.432, x: -51, y: -60, ease: Power2.easeInOut, delay: 7}, 0);
   TweenLite.to([logoblock,scroll], 1, {   y: -89, ease: Power2.easeInOut, delay: 7}, 0);
 
-  TweenLite.to(scrollwrapper, 8, {scrollTop: 30, ease: Power0.easeNone, delay: 7}, 0);
+  TweenLite.to(scrollwrapper, 7, {scrollTop: 34, ease: Power0.easeNone, delay: 7+1}, 0);
 
 }//end

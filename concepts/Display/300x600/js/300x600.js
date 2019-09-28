@@ -17,9 +17,6 @@ window.onload = function() {
 	// var sRays = document.getElementById("sheet0");
 
   // Functions
-
-
-
 	// cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
@@ -44,18 +41,11 @@ window.onload = function() {
   TweenLite.to(text3, 1, {opacity: 1,  ease: Power2.easeIn, delay: 7+0.5}, 0);
   TweenLite.to(text4, 1, {opacity: 1,  ease: Power2.easeIn, delay: 7+1, x: 0}, 0);
 
-  // TweenLite.to(text3, 1, {opacity: 0,  ease: Power2.easeIn, delay: 11-0.5}, 0);
-  // TweenLite.to(logo, 1, {opacity: 1,  ease: Power2.easeIn, delay: 10.5+0.25}, 0);
-  // TweenLite.to(text5, 1, {opacity: 1,  ease: Power2.easeIn, delay: 10.5+0.25}, 0);
-  // TweenLite.to(wall, 1,  {opacity: 1, scale: 1.1,    x: 0, y: 10, ease: Power2.easeInOut, delay: 11}, 0);
   TweenLite.to(logo, 1, {opacity: 1,  ease: Power2.easeIn, delay: 6.5+0.25}, 0);
   TweenLite.to(one, 1,   {opacity: 1, scale: 0.70, x: 2, y: -82, ease: Power2.easeInOut, delay: 7}, 0);
   TweenLite.to(woman, 1, {opacity: 1, scale: .54, x: 5, y: -14, ease: Power2.easeInOut, delay: 7}, 0);
   TweenLite.to([scroll, logoblock], 1, {y: -102, ease: Power2.easeInOut, delay: 7}, 0);
 
-  // TweenLite.to(text5, 1, {opacity: 0,  ease: Power2.easeIn, delay: 13}, 0);
-  // TweenLite.to(text4, 1, {opacity: 1,  ease: Power2.easeIn, delay: 13}, 0);
-
-  TweenLite.to(scrollwrapper, 8, {scrollTop: 30, ease: Power0.easeNone, delay: 7}, 0);
+  TweenLite.to(scrollwrapper, 7, {scrollTop: 28, ease: Power0.easeNone, delay: 7+1}, 0);
 
 }//end
