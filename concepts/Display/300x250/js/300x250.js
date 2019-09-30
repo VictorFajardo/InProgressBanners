@@ -32,7 +32,7 @@ window.onload = function() {
   TweenLite.set(text11, {opacity: 0, x: -50, ease: Power2.easeIn, delay: 0}, 0);
   TweenLite.set(text12, {opacity: 0, x: 50, ease: Power2.easeIn, delay: 0}, 0);
 
-  TweenLite.to([text11,text12], 0.75, {opacity: 1, x:0, ease: Power2.easeOut, delay: 0}, 0);
+  TweenLite.to([text11,text12], .75, {opacity: 1, x:0, ease: Power2.easeOut, delay: 0}, 0);
 
   TweenLite.to([text11,text12,blue], 1, {opacity: 0, ease: Power2.easeIn, delay: 3.5-1}, 0);
   TweenLite.to(bg, 1, {opacity: 1,  ease: Power2.easeOut, delay: 3.5}, 0);
