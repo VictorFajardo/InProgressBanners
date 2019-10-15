@@ -15,7 +15,7 @@ window.onload = function() {
   TweenLite.to(text1b, .5, {opacity: 1, x: 6, ease: Power2.easeOut, delay: 1.25}, 0);
   TweenLite.to(yes, .5, {opacity: 1, ease: Power2.easeOut, delay: .5}, 0);
   TweenLite.to(no, .5, {opacity: 1, ease: Power2.easeOut, delay: .75}, 0);
-  TweenLite.to(yes, .5, {width: 46.5, height: 21.5, ease: Power2.easeOut, delay: 1.75}, 0);
+  TweenLite.set(yes, {scale: 1.32, className: "shadow", ease: Power2.easeOut, delay: 1.75}, 0);
   
   TweenLite.to([text1a, text1b, yes, no], .75, {opacity: 0, ease: Power3.easeOut, delay: 3.5}, 0); 
   TweenLite.to([bg1, img1, img2, pylon], 1.5, {x: -166, ease: Power2.easeOut, delay: 3.5}, 0);

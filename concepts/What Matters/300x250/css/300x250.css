@@ -105,15 +105,17 @@ body {
 #yes {
     opacity: 0;
     position: absolute;
-	width: 35.5px;
-	height: 16px;
-	top: 200px;
-    left: 177px;
-	background: url('../img/yes.png');
-  background-size: cover;
-  box-shadow: -2px 2px 2px 1px rgba(41, 41, 41, 0.26);
+    width: 35.5px;
+    height: 16px;
+    top: 200px;
+    left: 185px;
+    background: url('../img/yes.png');
+    background-size: cover;
 }
-#no {
+#yes.shadow {
+    box-shadow: -2px 2px 2px 1px rgba(41, 41, 41, 0.26);
+}
+    #no {
 	opacity: 0;
 	position: absolute;
 	width: 35.5px;
