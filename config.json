@@ -1,22 +1,15 @@
 [
   {
-    "jobCode": "JobCode"
+    "jobCode": "XUC311"
   },
   {
-    "concept" : "Display",
+    "concept" : "What Matters",
     "type": "HTML5",
     "sizes": [
       {"b"  : "300x250",  "qa"  : "QA/"},
       {"b"  : "300x600",  "qa"  : "QA/"},
       {"b"  : "160x600",  "qa"  : "QA/"},
       {"b"  : "728x90",  "qa"  : "QA/"}
-    ]
-  },
-  {
-    "concept" : "ConceptName",
-    "type": "HTML5",
-    "sizes": [
-      {"b"  : "300x250",  "qa"  : "QA/"}
     ]
   }
 ]
