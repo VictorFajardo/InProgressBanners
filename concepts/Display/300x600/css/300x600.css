@@ -77,7 +77,7 @@
     top: 63px;
     left: 38px;
     opacity: 0;
-    z-index: 5;
+    /* z-index: 5; */
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 36px;
@@ -93,7 +93,7 @@
     height: 381px;
     bottom: 0;
     left: -5px;
-    z-index: 5;
+    /* z-index: 5; */
     opacity: 0;
 }
 #one {
@@ -104,7 +104,7 @@
     top: 272px;
     left: 0px;
     opacity: 0;
-    z-index: 4;
+    /* z-index: 4; */
 }
 
 #text3 {
@@ -112,7 +112,7 @@
     top: 72px;
     left: 18px;
     opacity: 0;
-    z-index: 6;
+    /* z-index: 6; */
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 36px;
@@ -127,7 +127,7 @@
     top: 232px;
     left: 35px;
     opacity: 0;
-    z-index: 8;
+    /* z-index: 8; */
     font-size: 9px;
 }
 
@@ -140,7 +140,7 @@
   top: 3px;
   left: 27px;
   opacity: 0;
-  z-index: 8;
+  /* z-index: 8; */
 }
 
 
@@ -149,7 +149,7 @@
     width: 298px;
     position: absolute;
     top: 598px;
-    z-index: 7;
+    /* z-index: 7; */
     opacity: 1;
 }
 .left-block{
@@ -175,12 +175,17 @@
     color: #485969;
     font-size: 7px;
     border-top: 1px solid #485969;
-    z-index: 7;
+    /* z-index: 7; */
     opacity: 1;
 }
 
 a{
     color: #485969;
+}
+/* Click tag */
+#click-area{
+    width: 298px;
+    height: 598px;
 }
 #scroll-title{
     height: 8px;

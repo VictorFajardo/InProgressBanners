@@ -1,7 +1,7 @@
 window.onload = function() {
 
   // Definitions
- var clickarea = document.getElementById("click-area");
+//  var clickarea = document.getElementById("click-area");
   var one = document.getElementById("one");
   var blue = document.getElementById("blue");
   var woman = document.getElementById("woman");

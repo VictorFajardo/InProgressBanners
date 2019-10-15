@@ -64,7 +64,7 @@
     top : 60px;
     left: 13px;
     opacity: 0;
-    z-index: 5;
+    /* z-index: 5; */
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     line-height: 26px;
@@ -81,7 +81,7 @@
     height: 344px;
     bottom: 0;
     left: -81px;
-    z-index: 13;
+    /* z-index: 13; */
     opacity: 0;
 }
 #one{
@@ -92,7 +92,7 @@
     top: 298px;
     left: 0px;
     opacity: 0;
-    z-index: 12;
+    /* z-index: 12; */
 }
 
 #text3{
@@ -104,7 +104,7 @@
     top: 54px;
     left: 0;
     opacity: 0;
-    z-index: 6;
+    /* z-index: 6; */
 }
 #text3 span {
     font-weight: 700;
@@ -115,7 +115,7 @@
     left: 30px;
     top: 227px;
     opacity: 0;
-    z-index:9;
+    /* z-index:9; */
     font-family: 'Montserrat', sans-serif;
     font-size: 7px;
     line-height: 9px;
@@ -129,7 +129,7 @@
   top: 4px;
   left: 0px;
   opacity: 0;
-  z-index: 8;
+  /* z-index: 8; */
 }
 
 
@@ -139,7 +139,7 @@
     width: 158px;
     position: absolute;
     top: 598px;
-    z-index: 16;
+    /* z-index: 16; */
     opacity: 1;
 }
 .left-block{
@@ -156,6 +156,11 @@
     font-size: 14.7px;
     font-weight: 700;
 }
+/* Click tag */
+#click-area{
+    width: 158px;
+    height: 598px;
+}
 #scroll{
   position: absolute;
   top: 643px;
@@ -165,7 +170,7 @@
     color: #485969;
     font-size: 7px;
     border-top: 1px solid #485969;
-    z-index: 15;
+    /* z-index: 15; */
     opacity: 1;
 }
 
