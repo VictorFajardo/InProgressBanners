@@ -473,3 +473,6 @@ sup {
 	/* transform: rotate(-10deg); */
     transform-origin: right 80%;
 }
+strong {
+    font-weight: bold;
+}
