@@ -215,38 +215,44 @@ body {
   opacity: 0;
 }
 #isi {
-	width: 726px;
-	bottom: -118px;
-	height: 118px;
-	position: absolute;
-	font-family: Arial,sans-serif;
-	background: #fff
+  width: 287px;
+  top: 0;
+  right: -288px;
+  height: 88px;
+  position: absolute;
+  font-family: Arial,sans-serif;
+  background: #fff;
+  border-left: 1px solid #4e5454;
+
 }
 .container {
 	overflow: auto;
 	position: relative;
-	width: 728px;
+	width: 287px;
 	height: auto;
 	box-sizing: border-box;
 	font-size: 10px;
 	color: #58585a
 }
 #isi-top {
-    width: 726px;
-    height: 18.5px;
-    background-color: #4e5454;
-    background-image: url('../img/isi-top.png');
-    background-size: contain;
-    background-position: center;
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  width: 438px;
+  height: 13px;
+  background-color: #4e5454;
+  background-image: url('../img/isi-top.png');
+  background-size: contain;
+  background-position: center;
 }
 #isi-bottom {
-    clear: both;
-    width: 726px;
-    height: 24px;
-    background-color: #4e5454;
-    background-image: url('../img/isi-bottom.png');
-    background-size: contain;
-    background-position: center;
+  clear: both;
+  width: 287px;
+  height: 13px;
+  background-color: #4e5454;
+  background-image: url('../img/isi-bottom.png');
+  background-size: contain;
+  background-position: center;
 }
 .all-themes .container {
 	width: 726px;
@@ -427,28 +433,27 @@ sup {
 	position: relative;
 }
 #prescribing {
-    position: absolute;
-    height: 10px;
-    width: 104px;
-    top: 3px;
-    left: 85px;
+  position: absolute;
+  height: 12px;
+  width: 82px;
+  top: 0;
+  left: 62px;
 }
 #medication {
-    position: absolute;
-    height: 10px;
-    width: 72px;
-    top: 13px;
-    left: 152px;
+  position: absolute;
+  height: 12px;
+  width: 126px;
+  top: 0;
+  left: 143px;
 }
 #scrolling {
 	opacity: 0;
 	position: absolute;
-    top: 168px;
-    left: 188px;
-    width: 59px;
-    height: 96px;
-    /* background-color: rgba(255, 255, 255, 1); */
-    transform: rotate(-7deg);
+  top: 168px;
+  left: 188px;
+  width: 59px;
+  height: 96px;
+  transform: rotate(-7deg);
 	border-bottom-right-radius: 4px;
 	overflow: hidden;
 }
