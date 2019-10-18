@@ -1,0 +1,517 @@
+@import "resets.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+/* Main */
+
+body {
+    background-color: #fff;
+}
+#wrapper {
+    width: 160px;
+    height: 600px;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+}
+#banner {
+    width: 158px;
+    height: 598px;
+    border: 1px solid #000;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Frames */
+
+/* #bg, .sheet, #text1, #text2, #text3, #text4, #at, #breathless, #copy, #cta, #logo, #click-area {
+    position: absolute;
+}
+#text1, #at, #breathless, #copy, #logo {
+    opacity: 0;
+} */
+
+.bg {
+    position: absolute;
+    width: 158px;
+    height: 598px;
+}
+
+#layer {
+    background-image: url('../_assets/_layer2.jpg');
+    top: -1px;
+    left: -1px;
+}
+
+#bg1 {
+  width: 431px;
+  height: 609px;
+  background-image: url('../img/bg1.jpg');
+  top: -264px;
+  left: 0px;
+}
+#text1a {
+    opacity: 0;
+    background-image: url('../img/text1a.png');
+    left: -6px;
+    background-size: cover;
+}
+#text1b {
+    opacity: 0;
+    background-image: url('../img/text1b.png');
+    left: -6px;
+    background-size: cover;
+}
+#text1c {
+    opacity: 0;
+    background-image: url('../img/text1c.png');
+    left: -6px;
+    background-size: cover;
+}
+#text1d {
+    opacity: 0;
+    background-image: url('../img/text1d.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2a {
+    opacity: 0;
+    background-image: url('../img/text2a.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2b {
+    opacity: 0;
+    background-image: url('../img/text2b.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2c {
+    opacity: 0;
+    background-image: url('../img/text2c.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2d {
+    opacity: 0;
+    background-image: url('../img/text2d.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2e {
+    opacity: 0;
+    background-image: url('../img/text2e.png');
+    left: -6px;
+    background-size: cover;
+}
+#text2f {
+    opacity: 0;
+    background-image: url('../img/text2f.png');
+    left: -6px;
+    background-size: cover;
+}
+#text3a {
+    opacity: 0;
+    background-image: url('../img/text3a.png');
+    left: -6px;
+    background-size: cover;
+}
+#text3b {
+    opacity: 0;
+    background-image: url('../img/text3b.png');
+    left: -6px;
+    background-size: cover;
+}
+#text3c {
+    opacity: 0;
+    background-image: url('../img/text3c.png');
+    left: -6px;
+    background-size: cover;
+}
+#text4 {
+    opacity: 0;
+    background-image: url('../img/text4.png');
+    background-size: cover;
+}
+#text5 {
+    opacity: 0;
+    background-image: url('../img/text5.png');
+    background-size: cover;
+}
+#white {
+	position: absolute;
+	width: 158px;
+	height: 253px;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}
+#yes {
+    opacity: 0;
+    position: absolute;
+    width: 57.5px;
+    height: 27px;
+    top: 484px;
+    left: 16px;
+    background: url('../img/yes.png');
+    background-size: cover;
+}
+#yes.shadow {
+    box-shadow: -2px 2px 2px 1px rgba(41, 41, 41, 0.26);
+}
+#no {
+	opacity: 0;
+	position: absolute;
+	width: 57.5px;
+	height: 27px;
+  top: 484px;
+  left: 91px;
+	background: url('../img/no.png');
+  background-size: cover;
+}
+#img1 {
+	position: absolute;
+	opacity: 0;
+  top: 138px;
+  left: 36px;
+  height: 184px;
+  width: 102px;
+	background-image: url('../img/img1.jpg');
+}
+#img2 {
+	position: absolute;
+	opacity: 0;
+  top: 138px;
+  left: 269px;
+  height: 187px;
+  width: 109px;
+	background-image: url('../img/img2.jpg');
+}
+#img3 {
+	position: absolute;
+	opacity: 0;
+  top: 148px;
+  left: 16px;
+  height: 184px;
+  width: 136px;
+	background-image: url('../img/img3.jpg');
+}
+#uc {
+    position: absolute;
+    bottom: 0;
+    width: 158px;
+    height: 55px;
+    background-image: url('../img/uc.png');
+    background-size: cover;
+}
+#available {
+    opacity: 0;
+    position: absolute;
+  background-image: url('../img/available.png');
+  background-size: cover;
+}
+#xeljanz {
+  opacity: 0;
+  position: absolute;
+  top: 23px;
+  left: 11px;
+  width: 135px;
+  height: 59px;
+  background-image: url('../img/xeljanz.svg');
+}
+#square1 {
+    position: absolute;
+    top: -280px;
+    left: -420px;
+    width: 900px;
+    height: 900px;
+    background-color: #fff;
+    opacity: .83;
+    border-bottom-right-radius: 100%;
+}
+#square2 {
+    position: absolute;
+    top: -420px;
+    left: -140px;
+    width: 900px;
+    height: 900px;
+    background-color: #fff;
+    opacity: .83;
+    border-top-left-radius: 100%;
+}
+#cta {
+  position: absolute;
+  background-image: url('../img/cta.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 211px;
+  left: 7px;
+  width: 109.5px;
+  height: 37px;
+  /*transform: scale(.1);*/
+  opacity: 0;
+}
+#isi {
+	width: 158px;
+	bottom: -243px;
+	height: 243px;
+	position: absolute;
+	font-family: Arial,sans-serif;
+	background: #fff
+}
+.container {
+	overflow: auto;
+	position: relative;
+	width: 300px;
+	height: auto;
+	box-sizing: border-box;
+	font-size: 10px;
+	color: #58585a
+}
+#isi-top {
+    width: 158px;
+    height: 25px;
+    background-color: #4e5454;
+    background-image: url('../img/isi-top.png');
+    background-size: contain;
+    background-position: center;
+}
+#isi-bottom {
+    clear: both;
+    width: 158px;
+    height: 35.5px;
+    background-color: #4e5454;
+    background-image: url('../img/isi-bottom.png');
+    background-size: contain;
+    background-position: center;
+}
+.all-themes .container {
+	width: 158px;
+	height: 182.5px;
+	float: left
+}
+.container-title {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #e90649;
+	margin: 3px 0 0 8px;
+	line-height: 12px;
+	font-weight: 700;
+	width: 128px
+}
+.container-text {
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	color: #000;
+	margin: 8px 0 0 8px;
+	line-height: 12px;
+	width: 128px;
+	letter-spacing: 0;
+	font-weight: 400;
+}
+
+.list li {
+	margin: 3px 0 3px 2px;
+	background: url(../img/circle.png) no-repeat left 4px;
+	padding: 0 0 0 6px;
+	list-style-type: none;
+	background-size: 3px
+}
+
+.bold {
+	font-weight: 700
+}
+
+sup {
+	top: -0.2em;
+	font-size: 8px
+}
+
+@-moz-document url-prefix() {
+	.container-text {
+		letter-spacing: -.3px
+	}
+}
+
+.mCustomScrollbar {
+	touch-action: none
+}
+
+.mCustomScrollbar.mCS_no_scrollbar,.mCustomScrollbar.mCS_touch_action {
+	touch-action: auto
+}
+
+.mCustomScrollBox {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	max-width: 100%;
+	outline: 0;
+	direction: ltr
+}
+
+.mCSB_container {
+	overflow: hidden;
+	width: auto;
+	height: auto
+}
+
+.mCSB_inside>.mCSB_container {
+	margin-right: 10px
+}
+
+.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+	margin-right: 0
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_container {
+	margin-right: 0;
+	margin-left: 30px
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden {
+	margin-left: 0
+}
+
+.mCSB_scrollTools {
+	position: absolute;
+	width: 22px;
+	height: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	bottom: 0
+}
+
+.mCSB_outside+.mCSB_scrollTools {
+	right: -26px;
+}
+
+.mCS-dir-rtl>.mCSB_inside>.mCSB_scrollTools,.mCS-dir-rtl>.mCSB_outside+.mCSB_scrollTools {
+	right: auto;
+	left: 0;
+}
+
+.mCS-dir-rtl>.mCSB_outside+.mCSB_scrollTools {
+	left: -26px;
+}
+
+.mCSB_scrollTools .mCSB_draggerContainer {
+	position: absolute;
+	top: 0;
+	left: 2px;
+	bottom: 0;
+	right: 0;
+	height: auto;
+}
+
+.mCSB_scrollTools a+.mCSB_draggerContainer {
+	margin: 10px 0;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+	width: 1px;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.mCSB_scrollTools .mCSB_dragger {
+	cursor: pointer;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	z-index: 1;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	position: relative;
+	width: 4px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center
+}
+
+.mCSB_scrollTools,.mCSB_scrollTools .mCSB_buttonDown,.mCSB_scrollTools .mCSB_buttonLeft,.mCSB_scrollTools .mCSB_buttonRight,.mCSB_scrollTools .mCSB_buttonUp,.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	transition: opacity .2s ease-in-out,background-color .2s ease-in-out
+}
+
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar {
+	transition: width .2s ease-out .2s,height .2s ease-out .2s,margin-left .2s ease-out .2s,margin-right .2s ease-out .2s,margin-top .2s ease-out .2s,margin-bottom .2s ease-out .2s,opacity .2s ease-in-out,background-color .2s ease-in-out
+}
+
+.mCS-rounded.mCSB_scrollTools .mCSB_draggerRail {
+	width: 2px;
+	height: 100%;
+	background: #9da2a0;
+	background-repeat: no-repeat
+}
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,.mCS-rounded-dots.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,.mCS-rounded.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	width: 10px;
+	height: 5px;
+	background: url(../img/scroll.svg);
+	background-repeat: no-repeat;
+	background-size: 10px
+}
+#here, #medication_isi, #medwatch, #prescribing_isi {
+	color: #e90649;
+	text-decoration: underline;
+	cursor: pointer
+}
+#logo_pfizer {
+	cursor: pointer;
+}
+#isi-bottom {
+	position: relative;
+}
+#prescribing {
+  position: absolute;
+  height: 10px;
+  width: 116px;
+  top: 3px;
+  left: 32px;
+}
+#medication {
+  position: absolute;
+  height: 10px;
+  width: 80px;
+  top: 24px;
+  left: 49px;
+}
+#scrolling {
+	opacity: 0;
+	position: absolute;
+    top: 168px;
+    left: 188px;
+    width: 59px;
+    height: 96px;
+    /* background-color: rgba(255, 255, 255, 1); */
+    transform: rotate(-7deg);
+	border-bottom-right-radius: 4px;
+	overflow: hidden;
+}
+#scrolling #website {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 59px;
+	height: 346px;
+	background-image: url(../img/website.jpg);
+}
+#thumb {
+	position: absolute;
+	opacity: 0;
+    top: 208px;
+    left: 212px;
+    width: 40px;
+    height: 32px;
+	background-image: url(../img/thumb.png);
+	/* transform: rotate(-10deg); */
+    transform-origin: right 80%;
+}
+strong {
+    font-weight: bold;
+}
