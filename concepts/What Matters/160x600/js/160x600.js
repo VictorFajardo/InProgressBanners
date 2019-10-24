@@ -34,6 +34,7 @@ window.onload = function() {
   TweenLite.to(img3, .75, {opacity: 1, ease: Power3.easeOut, delay: 6}, 0);
   TweenLite.to(text3a, .75, {opacity: 1, x: 6, ease: Power3.easeOut, delay: 6}, 0);
   TweenLite.to(text3b, .75, {opacity: 1, x: 6, ease: Power3.easeOut, delay: 6.15}, 0);
+  TweenLite.to(text3c, .75, {opacity: 1, x: 6, ease: Power3.easeOut, delay: 6.30}, 0);
 
   TweenLite.to([img3], .5, {opacity: 0, ease: Power2.easeOut, delay: 8.5}, 0);
   TweenLite.to(bg1, 1.2, {y: 264, x:-273, ease: Power2.easeOut, delay: 8.5}, 0);
