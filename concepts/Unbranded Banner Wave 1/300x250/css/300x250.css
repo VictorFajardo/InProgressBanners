@@ -1,0 +1,56 @@
+@import "resets.css";
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900'); */
+
+/* Main */
+#wrapper {
+    width: 670px;
+    height: 578px;
+    /* width: 300px;
+    height: 250px; */
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+}
+#banner {
+    /* border: 1px solid #000; */
+    width: 670px;
+    height: 578px;
+    /* width: 298px;
+    height: 248px; */
+    overflow: hidden;
+    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+}
+
+
+/* Frames */
+
+#bg, #choose, #lungs, #left-lung, #right-lung, #left-o, #right-o, #text1, #text2, #text3, #text4, #text5, #cta, #ofev, #click-area {
+    position: absolute;
+}
+#choose, #left-o, #right-o, #left-lung, #right-lung, #text1, #text2, #text3, #text4, #text5, #ofev, #cta, #scroll {
+    opacity: 0;
+}
+#canvas {
+    /* transform-origin: center; */
+    position: absolute;
+    /* z-index: -1; */
+    /* top: -160px;
+    left: -186px; */
+    /* height: 250px; */
+}
+#bg-canvas {
+    position: absolute;
+    opacity: 0;
+}
+.buttons {
+    position: absolute;
+    z-index: 100;
+}
+
+#cta {
+}
+#click-area {
+    width: 298px;
+    height: 248px;
+    background-color: rgba(0, 0, 0, 0);
+}
