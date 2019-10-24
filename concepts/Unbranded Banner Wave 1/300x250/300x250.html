@@ -25,11 +25,14 @@
             <a href="javascript:void(window.open(window.clickTag1))" id="click-area"></a> -->
             <div class="buttons">
                 <label for="inLeft">↔</label>
-                <input type="number" name="left" id="inLeft">
+                <input type="number" maxlength="4" size="4" name="left" id="inLeft">
                 <label for="inTop">↕</label>
                 <input type="number" name="top" id="inTop">
                 <label for="inLeft">width</label>
                 <input type="number" name="width" id="inWidth">
+                <button type="submit" id="copy">Copy</button>
+                <input type="text" name="point" id="inPoint" disabled>
+                <input type="text" name="copy" id="toCopy">
             </div>
         </div><!-- end of "banner" -->
     </div><!-- end of "wrapper" -->

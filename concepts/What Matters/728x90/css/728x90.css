@@ -172,6 +172,7 @@ body {
   position: absolute;
   background-image: url('../img/available.png');
   background-size: cover;
+  left: 1px;
 }
 #xeljanz {
   opacity: 0;

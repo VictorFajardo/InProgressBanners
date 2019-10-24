@@ -28,7 +28,8 @@ window.onload = function() {
         bgCtx.drawImage(img, 0, 0, 670, 578);
         bgCtx.globalCompositeOperation = 'destination-in';
         bgCtx.drawImage(mask, 0, 0, 670, 578);
-        animations();
+        // animations();
+        print();
       }
     }
   }
@@ -98,19 +99,55 @@ window.onload = function() {
     {x: 266, y: 563, w: 32},
     {x: 299, y: 563, w: 118}
   ]
-  // var matrix = [...introText, ...whiteText];
-  var matrix = [].concat(introText, whiteText);
+
+  var blackText = [
+    {x: 249, y: 25, w: 37},
+    {"x":287,"y":25,"w":43},
+    {"x":332,"y":25,"w":47},
+    {"x":381,"y":25,"w":16},
+    {"x":217,"y":46,"w":80},
+    {"x":299,"y":46,"w":52},
+    {"x":353,"y":46,"w":30},
+    {"x":384,"y":46,"w":14},
+    {"x":400,"y":46,"w":24},
+    {"x":425,"y":46,"w":13},
+    {"x":196,"y":67,"w":31},
+    {"x":386,"y":67,"w":62},
+    {"x":448,"y":67,"w":11},
+    {"x":175,"y":88,"w":24},
+    {"x":200,"y":88,"w":58},
+    {"x":379,"y":88,"w":30},
+    {"x":410,"y":88,"w":52},
+    {"x":461,"y":88,"w":12},
+    {"x":168,"y":108,"w":25},
+    {"x":168,"y":108,"w":25},
+    {"x":209,"y":108,"w":20},
+    {"x":231,"y":108,"w":30},
+    {"x":261,"y":108,"w":86},
+    {"x":349,"y":108,"w":37},
+    {"x":349,"y":108,"w":37},
+    {"x":398,"y":108,"w":59},
+    {"x":460,"y":108,"w":28},
+    {"x":142,"y":130,"w":34},
+    {"x":177,"y":130,"w":22},
+    {"x":200,"y":130,"w":38},
+    {"x":419,"y":130,"w":41},
+    {"x":461,"y":130,"w":18},
+    {"x":480,"y":130,"w":18},
+    {"x":130,"y":149,"w":24},
+
+  ]
+  // var matrix = [].concat(introText, whiteText);
+  // var matrix = [...introText, ...whiteText, ...blackText];
+  var matrix = [...blackText];
 
   /* Development Functions */
-  var point = {
-    x: 355,
-    y: 275,
-    w: 93
-  };
+  var point = {"x":130,"y":149,"w":24};
   
   function print() {
-    console.clear();
-    console.log(point);
+    // console.clear();
+    // console.log(point);
+    inPoint.value = JSON.stringify(point);
     ctx.clearRect(0, 0, 670, 578);
     ctx.globalAlpha = 1;
     ctx.drawImage(text, 0, 0, 670, 578);
@@ -137,6 +174,12 @@ window.onload = function() {
   inLeft.value = point.x;
   inTop.value = point.y;
   inWidth.value = point.w;
+
+  copy.addEventListener("click", function() {
+    toCopy.value = inPoint.value + ',';
+    toCopy.select();
+    document.execCommand('copy');
+  });
   /* End of Development Functions */
 
   function printingMask(counter) {

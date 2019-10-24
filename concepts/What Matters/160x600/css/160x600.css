@@ -210,8 +210,9 @@ body {
 #available {
     opacity: 0;
     position: absolute;
-  background-image: url('../img/available.png');
-  background-size: cover;
+    background-image: url('../img/available.png');
+    background-size: cover;
+    left: -2px;
 }
 #xeljanz {
   opacity: 0;
