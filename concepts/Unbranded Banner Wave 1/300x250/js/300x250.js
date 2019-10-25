@@ -13,29 +13,28 @@ window.onload = function() {
   var ctx = canvas.getContext("2d");
   var bgCanvas = document.getElementById("bg-canvas");
   var bgCtx = bgCanvas.getContext("2d");
+  var maskCanvas = document.getElementById("mask-canvas");
+  var maskCtx = maskCanvas.getContext("2d");
   var img = new Image();
   var text = new Image();
+  var shape = new Image();
   var mask = new Image();
   text.src = 'img/text.png';
   img.src = 'img/img.jpg';
+  shape.src = 'img/shape.png';
   mask.src = 'img/mask.png';
-  text.onload = function() {
-    imagesLoaded();
-  }
-  img.onload = function() {
-    imagesLoaded();
-  }
-  mask.onload = function() {
-    imagesLoaded();
-  }
+  text.onload = function() { imagesLoaded(); }
+  img.onload = function() { imagesLoaded(); }
+  shape.onload = function() { imagesLoaded(); }
+  mask.onload = function() { imagesLoaded(); }
   var loadedImageCount = 0;
   function imagesLoaded() {
     loadedImageCount++;
-    if (loadedImageCount == 3) {
+    if (loadedImageCount == 4) {
       console.log('all images loaded!')
       bgCtx.drawImage(img, 0, 0, 670, 578);
       bgCtx.globalCompositeOperation = 'destination-in';
-      bgCtx.drawImage(mask, 0, 0, 670, 578);
+      bgCtx.drawImage(shape, 0, 0, 670, 578);
       animations();
       // print();
     }
@@ -49,6 +48,7 @@ window.onload = function() {
     factor: 0,
     prev: 0,
     intro: 4,
+    mask: 500,
     height: 23
   };
   
@@ -108,18 +108,22 @@ window.onload = function() {
   /* End of Development Functions */
 
   function printingMask(counter) {
-    if (counter > matrix.length) counter = matrix.length;
-    // console.log(counter);
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.drawImage(text, 0, 0, 670, 578);
-    ctx.fillText("How did this happen?", 223, 293);
-    ctx.globalCompositeOperation = 'destination-in';
-    ctx.beginPath();
-    for (let i = 0; i < counter; i++) {
-      ctx.rect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
+    if (counter == 0) {
+      ctx.clearRect(0, 0, 670, 578);
+    } else {
+      if (counter > matrix.length) counter = matrix.length;
+      // console.log(counter);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.drawImage(text, 0, 0, 670, 578);
+      ctx.fillText("How did this happen?", 223, 293);
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.beginPath();
+      for (let i = 0; i < counter; i++) {
+        ctx.rect(matrix[i]['x'], matrix[i]['y'], matrix[i]['w'], matrix[i]['h']);
+      }
+      ctx.fill();
+      ctx.closePath();
     }
-    ctx.fill();
-    ctx.closePath();
   }
 
   function creatingPoints() {
@@ -133,12 +137,37 @@ window.onload = function() {
     }
   }
 
+  function movingMask() {
+    maskCtx.save();
+    maskCtx.drawImage(img, 0, 0, 670, 578);
+    maskCtx.globalCompositeOperation = 'destination-in';
+    maskCtx.drawImage(shape, 0, 0, 670, 578);
+    maskCtx.globalCompositeOperation = 'destination-out';
+    maskCtx.drawImage(mask, params.mask - 20, 0, 670, 578);
+    maskCtx.beginPath();
+    maskCtx.rect(0, 0, params.mask + 5, 578);
+    maskCtx.fill();
+    maskCtx.closePath();
+    maskCtx.restore();
+  }
+
   // Animations
   function animations() {
-    // TweenLite.set(canvas, {height: 250, delay: 0}, 0);
+    TweenLite.set([text1, text2, text3, text4], {x: -10, delay: 0}, 0);
     TweenLite.to(params, 5, {counter: 41, ease: Power0.easeNone, onUpdate: creatingPoints, delay: 0}, 0);
     TweenLite.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 2.5}, 0);
-    TweenLite.to([canvas, bgCanvas], 2.5, {x: -79, y: 12, scale: .55, ease: Power1.easeOut, delay: 2.5}, 0);
+    TweenLite.to([canvas, bgCanvas, maskCanvas], 2.5, {x: -79, y: 12, scale: .55, ease: Power2.easeOut, delay: 2.5}, 0);
+    TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 5}, 0);
+    TweenLite.to(params, 1, {mask: 0, ease: Power2.easeOut, onUpdate: movingMask, delay: 8}, 0);
+    TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 8}, 0);
+    TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
+    TweenLite.to([canvas, bgCanvas, maskCanvas], 1, {y: -7, scale: .44, ease: Power2.easeOut, delay: 11.5}, 0);
+    TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
+    TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
+    TweenLite.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
+    TweenLite.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
+    TweenLite.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 14}, 0);
   }
+  // TweenLite.set(maskCanvas, {x: -79, y: 12, scale: .55}, 0);
   
 }//end
