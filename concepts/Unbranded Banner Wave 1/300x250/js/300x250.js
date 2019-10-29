@@ -9,8 +9,6 @@ window.onload = function() {
 	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
   // Canvas
-  
-  
   var introText=[
     {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:93,h:23}
   ];
@@ -81,6 +79,20 @@ window.onload = function() {
   // TweenLite.to(node[0], 2, {x: node[0].dataset.x, delay: 0}, 0);
   // TweenLite.to(node[22], 2, {x: (node[22].dataset.inix + 200), delay: 0}, 0);
   
+
+  function movingMask() {
+    maskCtx.save();
+    maskCtx.drawImage(img, 0, 0, 670, 578);
+    maskCtx.globalCompositeOperation = 'destination-in';
+    maskCtx.drawImage(shape, 0, 0, 670, 578);
+    maskCtx.globalCompositeOperation = 'destination-out';
+    maskCtx.drawImage(mask, params.mask - 20, 0, 670, 578);
+    maskCtx.beginPath();
+    maskCtx.rect(0, 0, params.mask + 5, 578);
+    maskCtx.fill();
+    maskCtx.closePath();
+    maskCtx.restore();
+  }
 
   // Animations
     // TweenLite.set(canvas, {height: 250, delay: 0}, 0);

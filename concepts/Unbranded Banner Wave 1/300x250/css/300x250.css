@@ -10,6 +10,7 @@
     overflow: hidden;
     position: absolute;
     color: #fff;
+    font-family: Arial;
 }
 #banner {
     position: relative;
@@ -25,35 +26,76 @@
 
 /* Frames */
 
-#bg, #choose, #lungs, #left-lung, #right-lung, #left-o, #right-o, #text1, #text2, #text3, #text4, #text5, #cta, #ofev, #click-area {
+canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
     position: absolute;
 }
-#choose, #left-o, #right-o, #left-lung, #right-lung, #text1, #text2, #text3, #text4, #text5, #ofev, #cta, #scroll {
+#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
     opacity: 0;
 }
 canvas {
-    position: absolute;
     top: -160px;
     left: -185px;
-}
-#canvas {
-    
-}
-#bg-canvas {
-    opacity: 0;
 }
 /* #toCopy {
     opacity: 0;
 } */
-input[type=number]{
+/* input[type=number]{
     width: 50px;
-} 
-.buttons {
+}  */
+/* .buttons {
     position: absolute;
     z-index: 100;
+} */
+#text1 {
+    top: 21px;
+    right: 8px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
 }
-
+#text2 {
+    top: 132px;
+    right: 5px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
+    font-weight: 700;
+}
+#text3 {
+    top: 23px;
+    right: 12px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
+}
+#text4 {
+    top: 168px;
+    right: 11px;
+    font-size: 10px;
+    text-align: right;
+    line-height: 20px;
+    font-weight: 700;
+}
+#pfizer {
+    top: 221px;
+    left: 257px;
+    width: 29px;
+    height: 17px;
+    background: url(../img/pfizer.svg) center center no-repeat;
+}
 #cta {
+    top: 122px;
+    left: 156px;
+    width: 130px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 1px;
+    background: #ffffff;
+    color: #d8a13a;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
 }
 #click-area {
     width: 298px;
