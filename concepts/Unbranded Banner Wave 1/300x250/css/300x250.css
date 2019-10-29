@@ -106,11 +106,13 @@ canvas {
 
 #text {
     position: absolute;
-    width: 670px;
-    height: 578px;
-    /* background: url('../img/text.png'); */
+    /* width: 670px;
+    height: 578px; */
+    width: 878px;
+    height: 759px;
+    /* background: url('../img/words.png'); */
     /* opacity: .2; */
-    transform: scale(.55);
+    transform: scale(.3);
 }
 /* #vertical {
     position: absolute;
@@ -123,9 +125,11 @@ canvas {
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-image: url('../img/molde.png');
+    background-image: url('../img/words.png');
+    background-repeat: no-repeat;
     font-family: Arial;
     font-size: 22px;
     font-weight: 700;
     user-select: none;
+    /* border: 1px solid #000; */
 }

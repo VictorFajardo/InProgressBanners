@@ -42,25 +42,23 @@ window.onload = function() {
   matrix.forEach(function(point, i, arr) {
     // console.log(point);
     var el = document.createElement('div');
-    var cX = point.x + point.w / 2;
-    var cY = point.y + point.h / 2;
+    var cX = 0 + point.x*1.31 + (point.w*1.3) / 2;
+    var cY = 0 + point.y*1.31 + (point.h*1.3) / 2;
     el.id = 'point-' + i;
     el.className = 'words';
     el.style.left = cX + 'px';
     el.style.top = cY + 'px';
-    el.style.height = point.h + 'px';
-    el.style.width = point.w + 'px';
-    // el.innerHTML = Math.round((cX - params.centerX) * params.f);
+    el.style.height = point.h*1.3 + 'px';
+    el.style.width = point.w*1.3 + 'px';
     el.dataset.x = (cX - params.centerX) * params.f;
     el.dataset.y = (cY - params.centerY) * params.f;
-    el.dataset.inix =  point.w / 2;
-    el.dataset.iniy = point.h / 2;
-    el.style.backgroundPositionX = -point.x + 'px';
-    el.style.backgroundPositionY = -point.y + 'px';
+    el.dataset.inix =  point.w*1.3 / 2;
+    el.dataset.iniy = point.h*1.3 / 2;
+    el.style.backgroundPositionX = -point.x*1.31-0 + 'px';
+    el.style.backgroundPositionY = -point.y*1.31-0 + 'px';
     document.getElementById('text').appendChild(el);
     TweenLite.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), scale: params.scale, opacity: 0, delay: 0}, 0);
     if (i < introText.length) {
-      // el.innerHTML = introLabels[i];
       TweenLite.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: i * .2}, 0);
     }
     TweenLite.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
