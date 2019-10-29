@@ -8,5 +8,12 @@
     "sizes": [
       {"b"  : "300x250",  "qa"  : "QA/"}
     ]
+  },
+  {
+    "concept" : "Unbranded",
+    "type": "HTML5",
+    "sizes": [
+      {"b"  : "300x250",  "qa"  : "QA/"}
+    ]
   }
 ]

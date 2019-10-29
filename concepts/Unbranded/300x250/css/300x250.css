@@ -1,0 +1,104 @@
+@import "resets.css";
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900'); */
+
+/* Main */
+#wrapper {
+    /* width: 670px;
+    height: 578px; */
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    font-family: Arial;
+}
+#banner {
+    position: relative;
+    border: 1px solid #000;
+    /* width: 670px;
+    height: 578px; */
+    width: 298px;
+    height: 248px;
+    overflow: hidden;
+    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+}
+
+
+/* Frames */
+
+canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
+    position: absolute;
+}
+#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
+    opacity: 0;
+}
+canvas {
+    top: -160px;
+    left: -185px;
+}
+/* #toCopy {
+    opacity: 0;
+} */
+/* input[type=number]{
+    width: 50px;
+}  */
+/* .buttons {
+    position: absolute;
+    z-index: 100;
+} */
+#text1 {
+    top: 21px;
+    right: 8px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
+}
+#text2 {
+    top: 132px;
+    right: 5px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
+    font-weight: 700;
+}
+#text3 {
+    top: 23px;
+    right: 12px;
+    font-size: 18.5px;
+    text-align: right;
+    line-height: 20px;
+}
+#text4 {
+    top: 168px;
+    right: 11px;
+    font-size: 10px;
+    text-align: right;
+    line-height: 20px;
+    font-weight: 700;
+}
+#pfizer {
+    top: 221px;
+    left: 257px;
+    width: 29px;
+    height: 17px;
+    background: url(../img/pfizer.svg) center center no-repeat;
+}
+#cta {
+    top: 122px;
+    left: 156px;
+    width: 130px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 1px;
+    background: #ffffff;
+    color: #d8a13a;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+}
+#click-area {
+    width: 298px;
+    height: 248px;
+    background-color: rgba(0, 0, 0, 0);
+}

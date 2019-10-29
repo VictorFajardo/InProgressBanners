@@ -3,21 +3,21 @@
 
 /* Main */
 #wrapper {
-    /* width: 670px;
-    height: 578px; */
-    width: 300px;
-    height: 250px;
+    width: 670px;
+    height: 578px;
+    /* width: 300px;
+    height: 250px; */
     overflow: hidden;
     position: absolute;
     color: #fff;
 }
 #banner {
     position: relative;
-    border: 1px solid #000;
-    /* width: 670px;
-    height: 578px; */
-    width: 298px;
-    height: 248px;
+    /* border: 1px solid #000; */
+    width: 670px;
+    height: 578px;
+    /* width: 298px;
+    height: 248px; */
     overflow: hidden;
     background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
 }
@@ -59,4 +59,31 @@ input[type=number]{
     width: 298px;
     height: 248px;
     background-color: rgba(0, 0, 0, 0);
+}
+
+
+#text {
+    position: absolute;
+    width: 670px;
+    height: 578px;
+    /* background: url('../img/text.png'); */
+    /* opacity: .2; */
+    transform: scale(.55);
+}
+/* #vertical {
+    position: absolute;
+    left: 335px;
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+} */
+.words {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-image: url('../img/molde.png');
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: 700;
+    user-select: none;
 }
