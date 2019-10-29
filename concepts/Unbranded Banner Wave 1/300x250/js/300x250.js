@@ -9,6 +9,31 @@ window.onload = function() {
 	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
   // Canvas
+  var bgCanvas = document.getElementById("bg-canvas");
+  var bgCtx = bgCanvas.getContext("2d");
+  var maskCanvas = document.getElementById("mask-canvas");
+  var maskCtx = maskCanvas.getContext("2d");
+  var img = new Image();
+  var shape = new Image();
+  var mask = new Image();
+  img.src = 'img/img.jpg';
+  shape.src = 'img/shape.png';
+  mask.src = 'img/mask.png';
+  img.onload = function() { imagesLoaded(); }
+  shape.onload = function() { imagesLoaded(); }
+  mask.onload = function() { imagesLoaded(); }
+  var loadedImageCount = 0;
+  function imagesLoaded() {
+    loadedImageCount++;
+    if (loadedImageCount == 3) {
+      // console.log('all images loaded!')
+      bgCtx.drawImage(img, 0, 0, 370, 320);
+      bgCtx.globalCompositeOperation = 'destination-in';
+      bgCtx.drawImage(shape, 0, 0, 370, 320);
+    }
+  }
+  
+
   var introText=[
     {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:93,h:23}
   ];
@@ -28,7 +53,8 @@ window.onload = function() {
     centerY: 289,
     f: 1,
     counter: 0,
-    prev: 0
+    prev: 0,
+    mask: 370
   }
 
   blackText = blackText.sort(function() { return .5 - Math.random(); });
@@ -38,14 +64,13 @@ window.onload = function() {
   matrix = [].concat(introText, matrix);
   introLabels = ['How','did', 'this', 'happen?'];
   
-  console.log(matrix.length);
+  // console.log(matrix.length);
   matrix.forEach(function(point, i, arr) {
-    // console.log(point);
     var el = document.createElement('div');
     var cX = 0 + point.x*1.31 + (point.w*1.3) / 2;
     var cY = 0 + point.y*1.31 + (point.h*1.3) / 2;
     el.id = 'point-' + i;
-    el.className = 'words';
+    el.className = i < introText.length ? 'intro' : 'words';
     el.style.left = cX + 'px';
     el.style.top = cY + 'px';
     el.style.height = point.h*1.3 + 'px';
@@ -56,56 +81,44 @@ window.onload = function() {
     el.dataset.iniy = point.h*1.3 / 2;
     el.style.backgroundPositionX = -point.x*1.31-0 + 'px';
     el.style.backgroundPositionY = -point.y*1.31-0 + 'px';
-    document.getElementById('text').appendChild(el);
-    TweenLite.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), scale: params.scale, opacity: 0, delay: 0}, 0);
+    document.getElementById('container').appendChild(el);
+    TweenLite.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), scale: params.scale, delay: 0}, 0);
     if (i < introText.length) {
-      TweenLite.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: i * .2}, 0);
+      TweenLite.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: 0}, 0);
     }
-    TweenLite.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
+    TweenLite.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
   });
 
-  // node.forEach(function(el, i) {
-    // console.log(node[0].dataset.hw);
-    // TweenLite.set(node[i], {scale: 2, delay: 0}, 0);
-    // TweenLite.set(node[i], {
-    //   x: (node[i].dataset.x - node[i].dataset.inix),
-    //   y: (node[i].dataset.y - node[i].dataset.iniy),
-    //   scale: 2,
-    //   delay: 0}, 0);
-    
-  // });
-  // TweenLite.to(node[0], 2, {x: node[0].dataset.x, delay: 0}, 0);
-  // TweenLite.to(node[22], 2, {x: (node[22].dataset.inix + 200), delay: 0}, 0);
-  
-
   function movingMask() {
+    // console.log(params.mask);
     maskCtx.save();
-    maskCtx.drawImage(img, 0, 0, 670, 578);
+    maskCtx.drawImage(img, 0, 0, 370, 320);
     maskCtx.globalCompositeOperation = 'destination-in';
-    maskCtx.drawImage(shape, 0, 0, 670, 578);
+    maskCtx.drawImage(shape, 0, 0, 370, 320);
     maskCtx.globalCompositeOperation = 'destination-out';
-    maskCtx.drawImage(mask, params.mask - 20, 0, 670, 578);
+    maskCtx.drawImage(mask, params.mask, 0, 370, 320);
     maskCtx.beginPath();
-    maskCtx.rect(0, 0, params.mask + 5, 578);
+    maskCtx.rect(0, 0, params.mask + 2, 320);
     maskCtx.fill();
     maskCtx.closePath();
     maskCtx.restore();
   }
 
+
   // Animations
-    // TweenLite.set(canvas, {height: 250, delay: 0}, 0);
-    // TweenLite.to(params, 5, {counter: 41, ease: Power0.easeNone, onUpdate: creatingPoints, delay: 0}, 0);
-    // TweenLite.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 2.5}, 0);
-    // TweenLite.to([canvas, bgCanvas], 2.5, {x: -79, y: 12, scale: .55, ease: Power1.easeOut, delay: 2.5}, 0);
-  
-    // TweenLite.to(params, 3, {counter: 177, ease: Power0.easeNone, onUpdate: animating, delay: 0}, 0);
-
-    // function animating() {
-    //   if(Math.round(params.counter) != params.prev) {
-    //     console.log(Math.round(params.counter));
-    //     params.prev = Math.round(params.counter);
-    //   }
-    //   // TweenLite.set(node[0], {scale: 2, delay: 0}, 0);
-
-    // }
+    TweenLite.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 3}, 0);
+    TweenLite.to(container, 3, {x: -39, y: 49, ease: Power2.easeOut, delay: 2}, 0);
+    TweenLite.to(container, 1, {scale: .4215, ease: Power0.easeNone, delay: 2}, 0);
+    TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
+    TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 5.2}, 0);
+    TweenLite.to(params, 1, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 5.6}, 0);
+    TweenLite.to([bgCanvas, maskCanvas], 1, {y: -18, scale: .78, ease: Power2.easeOut, delay: 5.6}, 0);
+    TweenLite.to(container, 1, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 5.6}, 0);
+    TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
+    TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
+    TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
+    TweenLite.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
+    TweenLite.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
+    TweenLite.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 13}, 0);
+    
 }//end

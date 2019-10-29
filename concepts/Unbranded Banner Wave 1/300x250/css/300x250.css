@@ -3,10 +3,10 @@
 
 /* Main */
 #wrapper {
-    width: 670px;
-    height: 578px;
-    /* width: 300px;
-    height: 250px; */
+    /* width: 670px;
+    height: 578px; */
+    width: 300px;
+    height: 250px;
     overflow: hidden;
     position: absolute;
     color: #fff;
@@ -14,16 +14,14 @@
 }
 #banner {
     position: relative;
-    /* border: 1px solid #000; */
-    width: 670px;
-    height: 578px;
-    /* width: 298px;
-    height: 248px; */
+    border: 1px solid #000;
+    /* width: 670px;
+    height: 578px; */
+    width: 298px;
+    height: 248px;
     overflow: hidden;
     background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
 }
-
-
 /* Frames */
 
 canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
@@ -33,19 +31,9 @@ canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
     opacity: 0;
 }
 canvas {
-    top: -160px;
-    left: -185px;
+    top: -18px;
+    left: -114px;
 }
-/* #toCopy {
-    opacity: 0;
-} */
-/* input[type=number]{
-    width: 50px;
-}  */
-/* .buttons {
-    position: absolute;
-    z-index: 100;
-} */
 #text1 {
     top: 21px;
     right: 8px;
@@ -104,15 +92,19 @@ canvas {
 }
 
 
-#text {
+#container {
+    transform: translate(-50%, -50%);
     position: absolute;
-    /* width: 670px;
-    height: 578px; */
+    top: -286px;
+    left: -329px;
     width: 878px;
     height: 759px;
-    /* background: url('../img/words.png'); */
+    /* background: url('../img/words.png'), url('../img/intro.svg'); */
+    /* background-position: 0 0; */
+    background-repeat: no-repeat;
+    /* background-position: -289.51px -360.25px; */
     /* opacity: .2; */
-    transform: scale(.3);
+    transform: scale(.39);
 }
 /* #vertical {
     position: absolute;
@@ -124,12 +116,14 @@ canvas {
 .words {
     position: absolute;
     transform: translate(-50%, -50%);
-    text-align: center;
     background-image: url('../img/words.png');
-    background-repeat: no-repeat;
-    font-family: Arial;
-    font-size: 22px;
-    font-weight: 700;
-    user-select: none;
-    /* border: 1px solid #000; */
+    opacity: 0;
+}
+
+.intro {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/intro.svg');
+    background-size: 878px 759px;
+    opacity: 0;
 }
