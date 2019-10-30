@@ -35,7 +35,7 @@ window.onload = function() {
   
 
   var introText=[
-    {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:93,h:23}
+    {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:100,h:23}
   ];
   var whiteText=[
     {x:231,y:68,w:10,h:23},{x:243,y:68,w:42,h:23},{x:286,y:68,w:30,h:23},{x:317,y:68,w:65,h:23},{x:241,y:130,w:50,h:23},{x:292,y:130,w:50,h:23},{x:343,y:130,w:74,h:23},{x:310,y:171,w:93,h:23},{x:272,y:171,w:36,h:23},{x:233,y:171,w:36,h:23},{x:173,y:171,w:59,h:23},{x:272,y:213,w:71,h:23},{x:345,y:213,w:37,h:23},{x:382,y:213,w:13,h:23},{x:395,y:213,w:29,h:23},{x:428,y:213,w:80,h:23},{x:449,y:275,w:56,h:23},{x:371,y:336,w:49,h:23},{x:424,y:336,w:43,h:21},{x:243,y:378,w:59,h:23},{x:303,y:378,w:63,h:23},{x:368,y:378,w:39,h:23},{x:405,y:378,w:18,h:23},{x:294,y:419,w:46,h:23},{x:343,y:419,w:55,h:23},{x:399,y:419,w:19,h:23},{x:225,y:439,w:34,h:21},{x:367,y:458,w:15,h:23},{x:381,y:458,w:43,h:23},{x:425,y:458,w:30,h:23},{x:455,y:458,w:30,h:23},{x:145,y:480,w:66,h:23},{x:213,y:480,w:37,h:23},{x:250,y:480,w:13,h:23},{x:264,y:480,w:30,h:23},{x:296,y:480,w:81,h:23},{x:433,y:500,w:60,h:23},{x:494,y:500,w:37,h:23},{x:534,y:500,w:34,h:23},{x:54,y:520,w:69,h:23},{x:381,y:522,w:49,h:23},{x:434,y:522,w:40,h:23},{x:476,y:522,w:12,h:23},{x:489,y:522,w:42,h:23},{x:534,y:522,w:36,h:23},{x:161,y:563,w:47,h:23},{x:210,y:563,w:56,h:23},{x:266,y:563,w:32,h:23},{x:299,y:563,w:118,h:23}
@@ -110,10 +110,10 @@ window.onload = function() {
     TweenLite.to(container, 3, {x: -39, y: 49, ease: Power2.easeOut, delay: 2}, 0);
     TweenLite.to(container, 1, {scale: .4215, ease: Power0.easeNone, delay: 2}, 0);
     TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
-    TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 5.2}, 0);
-    TweenLite.to(params, 1, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 5.6}, 0);
-    TweenLite.to([bgCanvas, maskCanvas], 1, {y: -18, scale: .78, ease: Power2.easeOut, delay: 5.6}, 0);
-    TweenLite.to(container, 1, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 5.6}, 0);
+    TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 6.1}, 0);
+    TweenLite.to(params, 1, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.1}, 0);
+    TweenLite.to([bgCanvas, maskCanvas], 1, {y: -18, scale: .78, ease: Power2.easeOut, delay: 6.1}, 0);
+    TweenLite.to(container, 1, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 6.1}, 0);
     TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
     TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
     TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
