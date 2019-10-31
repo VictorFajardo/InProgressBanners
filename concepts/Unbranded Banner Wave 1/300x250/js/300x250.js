@@ -111,9 +111,9 @@ window.onload = function() {
     TweenLite.to(container, 1, {scale: .4215, ease: Power0.easeNone, delay: 2}, 0);
     TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
     TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 6.1}, 0);
-    TweenLite.to(params, 1, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.1}, 0);
-    TweenLite.to([bgCanvas, maskCanvas], 1, {y: -18, scale: .78, ease: Power2.easeOut, delay: 6.1}, 0);
-    TweenLite.to(container, 1, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 6.1}, 0);
+    TweenLite.to(params, 3, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.6}, 0);
+    TweenLite.to([bgCanvas, maskCanvas], 3, {y: -18, scale: .78, ease: Power2.easeOut, delay: 6.6}, 0);
+    TweenLite.to(container, 3, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 6.6}, 0);
     TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
     TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
     TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
