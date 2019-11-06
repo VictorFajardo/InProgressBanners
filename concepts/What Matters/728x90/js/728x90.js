@@ -1,13 +1,19 @@
 window.onload = function() {
 
   // Definitions
-  // var clickarea = document.getElementById("click-area");
-  var isitop = document.getElementById("isi-top");
+  var clickarea = document.getElementById("click-area");
+  var isibottom = document.getElementById("isi-bottom");
 
   // Functions
 
-	// cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
-	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
+	prescribing.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
+	medication.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag2"); }, true);
+	cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag3"); }, true);
+	prescribing_isi.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag4"); }, true);
+	medication_isi.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag5"); }, true);
+	medwatch.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag6"); }, true);
+	here.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag7"); }, true);
+	clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag8"); }, true);
 
   // Animations
 
@@ -40,7 +46,7 @@ window.onload = function() {
   TweenLite.to(bg1, .75, {y: 188, ease: Power2.easeOut, delay: 8.75}, 0);
   TweenLite.to(white, .25, {opacity: 0, ease: Power2.easeOut, delay: 8.75}, 0);
   TweenLite.to(isi, .25, {x: -288, ease: Power2.easeOut, delay: 8.5}, 0);
-  TweenLite.to(isitop, .25, {y: -13, ease: Power2.easeOut, delay: 8.75}, 0);
+  TweenLite.to(isibottom, .25, {y: -13, ease: Power2.easeOut, delay: 8.75}, 0);
   TweenLite.to([text4, xeljanz, available], .5, {opacity: 1, ease: Power2.easeOut, delay: 9.5}, 0);
   
   TweenLite.to(text4, .5, {opacity: 0, ease: Power2.easeOut, delay: 14}, 0);

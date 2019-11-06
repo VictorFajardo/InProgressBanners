@@ -6,14 +6,10 @@
     "concept" : "Unbranded Banner Wave 1",
     "type": "HTML5",
     "sizes": [
-      {"b"  : "300x250",  "qa"  : "QA/"}
-    ]
-  },
-  {
-    "concept" : "Unbranded",
-    "type": "HTML5",
-    "sizes": [
-      {"b"  : "300x250",  "qa"  : "QA/"}
+      {"b"  : "300x250",  "qa"  : "QA/"},
+      {"b"  : "300x600",  "qa"  : "QA/"},
+      {"b"  : "160x600",  "qa"  : "QA/"},
+      {"b"  : "728x90",  "qa"  : "QA/"}
     ]
   }
 ]

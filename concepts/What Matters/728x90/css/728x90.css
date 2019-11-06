@@ -235,7 +235,7 @@ body {
 	font-size: 10px;
 	color: #58585a
 }
-#isi-top {
+#isi-bottom {
   position: absolute;
   bottom: -13px;
   left: 0;
@@ -246,7 +246,7 @@ body {
   background-size: contain;
   background-position: center;
 }
-#isi-bottom {
+#isi-top {
   clear: both;
   width: 287px;
   height: 13px;
@@ -256,7 +256,7 @@ body {
   background-position: center;
 }
 .all-themes .container {
-	width: 726px;
+	width: 287px;
 	height: 75.5px;
 	float: left
 }
@@ -275,7 +275,7 @@ body {
 	color: #000;
 	margin: 8px 0 0 8px;
 	line-height: 12px;
-	width: 268px;
+	width: 257px;
 	letter-spacing: 0;
 	font-weight: 400;
 }
@@ -430,22 +430,22 @@ sup {
 #logo_pfizer {
 	cursor: pointer;
 }
-#isi-bottom {
+#isi-top {
 	position: relative;
 }
 #prescribing {
   position: absolute;
   height: 12px;
-  width: 82px;
+  width: 121px;
   top: 0;
   left: 62px;
 }
 #medication {
   position: absolute;
   height: 12px;
-  width: 126px;
+  width: 82px;
   top: 0;
-  left: 143px;
+  left: 324px;
 }
 #scrolling {
 	opacity: 0;

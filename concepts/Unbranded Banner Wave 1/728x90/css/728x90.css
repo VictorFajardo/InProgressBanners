@@ -1,0 +1,128 @@
+@import "resets.css";
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900'); */
+
+/* Main */
+#wrapper {
+    /* width: 670px;
+    height: 578px; */
+    width: 728px;
+    height: 90px;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    font-family: Arial;
+}
+#banner {
+    position: relative;
+    border: 1px solid #000;
+    /* width: 670px;
+    height: 578px; */
+    width: 726px;
+    height: 88px;
+    overflow: hidden;
+    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+}
+/* Frames */
+
+canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
+    position: absolute;
+}
+#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
+    opacity: 0;
+}
+canvas {
+    top: -101px;
+    left: -55px;
+    transform: scale(.9);
+}
+#text1 {
+    top: 10px;
+    left: 234px;
+    font-size: 17px;
+    text-align: left;
+    line-height: 21px;
+}
+#text2 {
+  top: 52px;
+      left: 235px;
+      font-size: 17px;
+      text-align: left;
+      line-height: 21px;
+      font-weight: 700;
+}
+#text3 {
+  top: 25px;
+  left: 235px;
+  font-size: 17px;
+  text-align: left;
+  line-height: 21px;
+}
+#text4 {
+  top: 56px;
+  right: 98px;
+  font-size: 11px;
+  text-align: left;
+  line-height: 20px;
+  font-weight: 700;
+}
+#pfizer {
+    top: 40px;
+    left: 675px;
+    width: 29px;
+    height: 17px;
+    background: url(../img/pfizer.svg) center center no-repeat;
+}
+#cta {
+  top: 20px;
+      left: 501px;
+      width: 130px;
+      height: 32px;
+      font-size: 13px;
+      border-radius: 1px;
+      background: #ffffff;
+      color: #d8a13a;
+      line-height: 32px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+}
+#click-area {
+    width: 726px;
+    height: 88px;
+    background-color: rgba(0, 0, 0, 0);
+}
+#container {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: -331px;
+    left: -75px;
+    width: 878px;
+    height: 759px;
+    /* background: url('../img/words.png'), url('../img/intro.svg'); */
+    /* background-position: 0 0; */
+    background-repeat: no-repeat;
+    /* background-position: -289.51px -360.25px; */
+    /* opacity: .2; */
+    transform: scale(.318);
+}
+/* #vertical {
+    position: absolute;
+    left: 335px;
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+} */
+.words {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/words.png');
+    opacity: 0;
+}
+
+.intro {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/intro.svg');
+    background-size: 878px 759px;
+    opacity: 0;
+}
