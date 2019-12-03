@@ -1,12 +1,11 @@
 window.onload = function() {
 
   // Definitions
-  // var clickarea = document.getElementById("click-area");
+  var clickarea = document.getElementById("click-area");
 
   // Functions
-
-	// cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
-	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
+	cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
+	clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
   // Canvas
   var bgCanvas = document.getElementById("bg-canvas");
@@ -32,7 +31,6 @@ window.onload = function() {
       bgCtx.drawImage(shape, 0, 0, 370, 320);
     }
   }
-
 
   var introText=[
     {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:100,h:23}
@@ -100,40 +98,28 @@ window.onload = function() {
     maskCtx.restore();
   }
 
-  function reset() {
-    params.loops--;
-    if (params.loops > 0) {
-      tl.restart();
-    }
-  }
-
-  if (typeof tl == 'undefined') var tl = new TimelineLite();
-
   // Animations
-    tl.set(params, {onComplete: movingMask, delay: 0}, 0);
-    nodes.forEach(function(el, i, arr) {
-      tl.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), opacity: 0, scale: params.scale, delay: 0}, 0);
-      if (i < introText.length) {
-        tl.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: 0}, 0);
-      }
-      tl.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
-    });
-    tl.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 3}, 0);
-    tl.to(container, 3, {x: -234, y: 11, ease: Power2.easeOut, delay: 2}, 0);
-    tl.to(container, 1, {scale: .3793, ease: Power0.easeNone, delay: 2}, 0);
-    tl.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
-    tl.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 7}, 0);
-    tl.to(params, 3, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.6}, 0);
-    // tl.to([bgCanvas, maskCanvas], 3, {x: -2, y: -6, scale: .48, ease: Power2.easeOut, delay: 6.6}, 0);
-    // tl.to(container, 3, {x: -236, y: 4, scale: .2023, ease: Power2.easeOut, delay: 6.6}, 0);
-    tl.to([bgCanvas, maskCanvas], 3, {x: 5, y: -11, scale: .32, ease: Power2.easeOut, delay: 6.6}, 0);
-    tl.to(container, 3, {x: -229, y: -.5, scale: .1349, ease: Power2.easeOut, delay: 6.6}, 0);
-    tl.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
-    tl.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
-    tl.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
-    tl.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
-    tl.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
-    tl.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 13}, 0);
-    tl.set(params, {onComplete: reset, delay: 15}, 0);
-  // }
+  TweenLite.set(params, {onComplete: movingMask, delay: 0}, 0);
+  nodes.forEach(function(el, i, arr) {
+    TweenLite.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), opacity: 0, scale: params.scale, delay: 0}, 0);
+    if (i < introText.length) {
+      TweenLite.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: 0}, 0);
+    }
+    TweenLite.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
+  });
+  TweenLite.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 3}, 0);
+  TweenLite.to(container, 3, {x: -234, y: 11, ease: Power2.easeOut, delay: 2}, 0);
+  TweenLite.to(container, 1, {scale: .3793, ease: Power0.easeNone, delay: 2}, 0);
+  TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
+  TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 7}, 0);
+  TweenLite.to(params, 3, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 5}, 0);
+  TweenLite.to([bgCanvas, maskCanvas], 3, {x: 5, y: -11, scale: .32, ease: Power2.easeOut, delay: 6.6}, 0);
+  TweenLite.to(container, 3, {x: -229, y: -.5, scale: .1349, ease: Power2.easeOut, delay: 6.6}, 0);
+  TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
+  TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
+  TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
+  TweenLite.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
+  TweenLite.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
+  TweenLite.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 13}, 0);
+
 }//end

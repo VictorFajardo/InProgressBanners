@@ -91,7 +91,6 @@ canvas {
     background-color: rgba(0, 0, 0, 0);
 }
 
-
 #container {
     transform: translate(-50%, -50%);
     position: absolute;
@@ -106,13 +105,6 @@ canvas {
     /* opacity: .2; */
     transform: scale(.39);
 }
-/* #vertical {
-    position: absolute;
-    left: 335px;
-    width: 1px;
-    height: 100%;
-    background-color: #000;
-} */
 .words {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -126,4 +118,28 @@ canvas {
     background-image: url('../img/intro.svg');
     background-size: 878px 759px;
     opacity: 0;
+}
+
+/* For Development */
+#toCopy {
+    /* z-index: -1; */
+    /* display: none; */
+    opacity: 0;
+}
+input[type=number]{
+    width: 50px;
+} 
+.buttons {
+    position: absolute;
+    z-index: 100;
+}
+canvas {
+    opacity: 1 !important;
+    top: 0;
+    left: 0;
+}
+
+#wrapper, #banner {
+    width: 670px;
+    height: 599px;
 }

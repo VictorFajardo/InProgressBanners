@@ -1,39 +1,36 @@
 window.onload = function() {
 
   // Definitions
-  // var clickarea = document.getElementById("click-area");
+  var clickarea = document.getElementById("click-area");
 
   // Functions
-
 	// cta.addEventListener ("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 	// clickarea.addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); Enabler.exit("clickTag1"); }, true);
 
   // Canvas
-  var bgCanvas = document.getElementById("bg-canvas");
-  var bgCtx = bgCanvas.getContext("2d");
-  var maskCanvas = document.getElementById("mask-canvas");
-  var maskCtx = maskCanvas.getContext("2d");
-  var img = new Image();
-  var shape = new Image();
-  var mask = new Image();
-  img.src = 'img/img.jpg';
-  shape.src = 'img/shape.png';
-  mask.src = 'img/mask.png';
-  img.onload = function() { imagesLoaded(); }
-  shape.onload = function() { imagesLoaded(); }
-  mask.onload = function() { imagesLoaded(); }
-  var loadedImageCount = 0;
-  function imagesLoaded() {
-    loadedImageCount++;
-    if (loadedImageCount == 3) {
-      // console.log('all images loaded!')
-      bgCtx.drawImage(img, 0, 0, 370, 320);
-      bgCtx.globalCompositeOperation = 'destination-in';
-      bgCtx.drawImage(shape, 0, 0, 370, 320);
-    }
-  }
+  // var bgCanvas = document.getElementById("bg-canvas");
+  // var bgCtx = bgCanvas.getContext("2d");
+  // var maskCanvas = document.getElementById("mask-canvas");
+  // var maskCtx = maskCanvas.getContext("2d");
+  // var img = new Image();
+  // var shape = new Image();
+  // var mask = new Image();
+  // img.src = 'img/img.jpg';
+  // shape.src = 'img/shape.png';
+  // mask.src = 'img/mask.png';
+  // img.onload = function() { imagesLoaded(); }
+  // shape.onload = function() { imagesLoaded(); }
+  // mask.onload = function() { imagesLoaded(); }
+  // var loadedImageCount = 0;
+  // function imagesLoaded() {
+  //   loadedImageCount++;
+  //   if (loadedImageCount == 3) {
+  //     bgCtx.drawImage(img, 0, 0, 370, 320);
+  //     bgCtx.globalCompositeOperation = 'destination-in';
+  //     bgCtx.drawImage(shape, 0, 0, 370, 320);
+  //   }
+  // }
   
-
   var introText=[
     {x:221,y:275,w:51,h:23},{x:274,y:275,w:36,h:23},{x:312,y:275,w:42,h:23},{x:355,y:275,w:100,h:23}
   ];
@@ -65,7 +62,6 @@ window.onload = function() {
   matrix = [].concat(introText, matrix);
   introLabels = ['How','did', 'this', 'happen?'];
   
-  // console.log(matrix.length);
   matrix.forEach(function(point, i) {
     var el = document.createElement('div');
     var cX = 0 + point.x*1.31 + (point.w*1.3) / 2;
@@ -100,38 +96,73 @@ window.onload = function() {
     maskCtx.restore();
   }
 
-  function reset() {
-    params.loops--;
-    if (params.loops > 0) {
-      tl.restart();
-    }
+  /* Development Functions */
+  var devCanvas = document.getElementById("dev");
+  var devCtx = devCanvas.getContext("2d");
+  var words = new Image();
+  words.src = 'img/words.png';
+
+  var point = {"x":221,"y":275,"w":51,"h":23};
+  
+  function print() {
+    inPoint.value = JSON.stringify(point);
+    devCtx.clearRect(0, 0, 670, 599);
+    devCtx.globalAlpha = 1;
+    devCtx.drawImage(words, 0, 0, 670, 599);
+    devCtx.globalAlpha = .2;
+    devCtx.beginPath();
+    devCtx.rect(point.x, point.y, point.w, point.h);      
+    devCtx.fill();
+    devCtx.closePath();
   }
 
-  if (typeof tl == 'undefined') var tl = new TimelineLite();
+  inLeft.addEventListener('change', (e) => {
+    point.x = parseInt(e.target.value);
+    print();
+  })
+  inTop.addEventListener('change', (e) => {
+    point.y = parseInt(e.target.value);
+    print();
+  })
+  inWidth.addEventListener('change', (e) => {
+    point.w = parseInt(e.target.value);
+    print();
+  })
+  
+  inLeft.value = point.x;
+  inTop.value = point.y;
+  inWidth.value = point.w;
+  
+  copy.addEventListener("click", function() {
+    toCopy.value = inPoint.value + ',';
+    toCopy.select();
+    document.execCommand('copy');
+  });
+  
+  words.onload = function() { print(); }
+  
+  /* End of Development Functions */
 
   // Animations
-    tl.set(params, {onComplete: movingMask, delay: 0}, 0);
-    nodes.forEach(function(el, i, arr) {
-      tl.set(el, {x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), opacity: 0, scale: params.scale, delay: 0}, 0);
-      if (i < introText.length) {
-        tl.to(el, params.aniTime, {opacity: 1, ease: Power1.easeOut, delay: 0}, 0);
-      }
-      tl.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
-    });
-    tl.to(bgCanvas, 2.5, {opacity: .2, ease: Power0.easeNone, delay: 3}, 0);
-    tl.to(container, 3, {x: -39, y: 49, ease: Power2.easeOut, delay: 2}, 0);
-    tl.to(container, 1, {scale: .4215, ease: Power0.easeNone, delay: 2}, 0);
-    tl.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
-    tl.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 7}, 0);
-    tl.to(params, 3, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.6}, 0);
-    tl.to([bgCanvas, maskCanvas], 3, {y: -18, scale: .78, ease: Power2.easeOut, delay: 6.6}, 0);
-    tl.to(container, 3, {x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 6.6}, 0);
-    tl.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
-    tl.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
-    tl.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
-    tl.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
-    tl.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
-    tl.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 13}, 0);
-    tl.set(params, {onComplete: reset, delay: 15}, 0);
-  // }
+  // TweenLite.set(params, { onComplete: movingMask, delay: 0 }, 0);
+  // nodes.forEach(function (el, i, arr) {
+  //   TweenLite.set(el, { x: (el.dataset.x - el.dataset.inix), y: (el.dataset.y - el.dataset.iniy), opacity: 0, scale: params.scale, delay: 0 }, 0);
+  //   if (i < introText.length) {
+  //     TweenLite.to(el, params.aniTime, { opacity: 1, ease: Power1.easeOut, delay: 0 }, 0);
+  //   }
+  //   TweenLite.to(el, params.aniTime, { x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D: true, rotationZ: "0.1deg", translateZ: -100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length) }, 0);
+  // });
+  // TweenLite.to(bgCanvas, 2.5, { opacity: .2, ease: Power0.easeNone, delay: 3 }, 0);
+  // TweenLite.to(container, 3, { x: -39, y: 49, ease: Power2.easeOut, delay: 2 }, 0);
+  // TweenLite.to(container, 1, { scale: .4215, ease: Power0.easeNone, delay: 2 }, 0);
+  // TweenLite.to(text1, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4 }, 0);
+  // TweenLite.to(text2, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 7 }, 0);
+  // TweenLite.to(params, 3, { mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.6 }, 0);
+  // TweenLite.to([bgCanvas, maskCanvas], 3, { y: -18, scale: .78, ease: Power2.easeOut, delay: 6.6 }, 0);
+  // TweenLite.to(container, 3, { x: -39, y: 30, scale: .3287, ease: Power2.easeOut, delay: 6.6 }, 0);
+  // TweenLite.to([text1, text2], .5, { opacity: 0, ease: Power2.easeOut, delay: 11 }, 0);
+  // TweenLite.to(text3, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5 }, 0);
+  // TweenLite.to(text4, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 13 }, 0);
+  // TweenLite.to(pfizer, 1, { opacity: 1, ease: Power2.easeOut, delay: 13 }, 0);
+
 }//end

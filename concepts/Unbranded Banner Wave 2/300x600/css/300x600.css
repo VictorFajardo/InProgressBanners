@@ -1,0 +1,134 @@
+@import "resets.css";
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900'); */
+
+/* Main */
+#wrapper {
+    /* width: 670px;
+    height: 578px; */
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+    font-family: Arial;
+}
+#banner {
+    position: relative;
+    border: 1px solid #000;
+    /* width: 670px;
+    height: 578px; */
+    width: 298px;
+    height: 598px;
+    overflow: hidden;
+    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+}
+/* Frames */
+
+canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
+    position: absolute;
+}
+#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
+    opacity: 0;
+}
+canvas {
+    top: 244px;
+    left: -32px;
+    transform: scale(1.208);
+}
+#shade {
+    position: absolute;
+    opacity: 0;
+    width: 298px;
+    height: 80px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(216,161,58,0) 0%,rgba(216,161,58,1) 100%);
+}
+#container {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: -87px;
+    left: -289px;
+    width: 878px;
+    height: 759px;
+    /* background: url('../img/words.png'), url('../img/intro.svg'); */
+    /* background-position: 0 0; */
+    background-repeat: no-repeat;
+    /* background-position: -289.51px -360.25px; */
+    /* opacity: .2; */
+    transform: scale(.39);
+}
+#text1 {
+    top: 36px;
+    right: 33px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+}
+#text2 {
+    top: 167px;
+    right: 36px;
+    font-size:24px;
+    text-align: right;
+    line-height: 28px;
+    font-weight: 700;
+}
+#text3 {
+    top: 36px;
+    right: 38px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+}
+#text4 {
+  top: 218px;
+  right: 74px;
+    font-size: 13px;
+    text-align: right;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Helvetica, sans-serif;
+}
+#pfizer {
+    bottom: 16px;
+    left: 257px;
+    width: 29px;
+    height: 17px;
+    background: url('../img/pfizer.svg') center center no-repeat;
+}
+#cta {
+  top: 164px;
+    left: 64px;
+    width: 170px;
+    height: 42px;
+    font-size: 17px;
+    border-radius: 1px;
+    background: #ffffff;
+    color: #d8a13a;
+    line-height: 43px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+}
+#click-area {
+    width: 298px;
+    height: 598px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.words {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/words.png');
+    opacity: 0;
+}
+
+.intro {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/intro.svg');
+    background-size: 878px 759px;
+    opacity: 0;
+}
