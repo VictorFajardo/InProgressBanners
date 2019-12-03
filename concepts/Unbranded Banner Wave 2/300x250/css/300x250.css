@@ -132,6 +132,9 @@ input[type=number]{
 input[type=text]{
     width: 200px;
 }
+button:focus {
+    background-color: darkorange;
+}
 .buttons {
     position: absolute;
     z-index: 100;
