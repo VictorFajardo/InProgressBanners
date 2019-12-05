@@ -20,66 +20,72 @@
     width: 298px;
     height: 248px;
     overflow: hidden;
-    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+    background-image: url('../img/bg.jpeg');
 }
 /* Frames */
 
-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
+canvas, #text1, #text2, #text3, #text4, #text5, #cta, #pfizer, #click-area {
     position: absolute;
 }
-#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
+#bg-canvas, #text1, #text2, #text3, #text4, #text5, #cta, #pfizer {
     opacity: 0;
 }
 canvas {
-    top: -18px;
-    left: -114px;
+    top: -39px;
+    left: -119px;
+    transform: scale(0.83);
 }
 #text1 {
-    top: 21px;
-    right: 8px;
-    font-size: 18.5px;
+    top: 113px;
+    right: 11px;
+    font-size: 26px;
     text-align: right;
-    line-height: 20px;
+    line-height: 30px;
 }
 #text2 {
-    top: 132px;
-    right: 5px;
-    font-size: 18.5px;
+    top: 113px;
+    right: 11px;
+    font-size: 26px;
     text-align: right;
-    line-height: 20px;
-    font-weight: 700;
+    line-height: 30px;
 }
 #text3 {
-    top: 23px;
+    top: 18px;
     right: 12px;
     font-size: 18.5px;
     text-align: right;
     line-height: 20px;
 }
 #text4 {
-    top: 168px;
+    top: 157px;
     right: 11px;
-    font-size: 10px;
+    font-size: 10.5px;
     text-align: right;
     line-height: 20px;
     font-weight: 700;
 }
+#text5 {
+    top: 223px;
+    right: 48px;
+    font-size: 8px;
+    font-weight: 700;
+}
 #pfizer {
-    top: 221px;
-    left: 257px;
+    top: 217px;
+    left: 254px;
     width: 29px;
     height: 17px;
     background: url(../img/pfizer.svg) center center no-repeat;
 }
 #cta {
-    top: 122px;
-    left: 156px;
-    width: 130px;
+    top: 118px;
+    left: 186px;
+    width: 100px;
     height: 32px;
     font-size: 13px;
     border-radius: 1px;
     background: #ffffff;
-    color: #d8a13a;
+    color: #8bc5b1;
     line-height: 32px;
     text-align: center;
     text-decoration: none;
@@ -94,16 +100,16 @@ canvas {
 #container {
     transform: translate(-50%, -50%);
     position: absolute;
-    top: -286px;
-    left: -329px;
-    width: 878px;
-    height: 759px;
+    top: -114px;
+    left: -175px;
+    width: 670px;
+    height: 599px;
     /* background: url('../img/words.png'), url('../img/intro.svg'); */
     /* background-position: 0 0; */
     background-repeat: no-repeat;
     /* background-position: -289.51px -360.25px; */
     /* opacity: .2; */
-    transform: scale(.39);
+    transform: scale(.63);
 }
 .words {
     position: absolute;
@@ -116,14 +122,12 @@ canvas {
     position: absolute;
     transform: translate(-50%, -50%);
     background-image: url('../img/intro.svg');
-    background-size: 878px 759px;
+    background-size: 670px 599px;
     opacity: 0;
 }
 
 /* For Development */
-#toCopy {
-    /* z-index: -1; */
-    /* display: none; */
+/* #toCopy {
     opacity: 0;
 }
 input[type=number]{
@@ -149,4 +153,4 @@ canvas {
 #wrapper, #banner {
     width: 670px;
     height: 599px;
-}
+} */
