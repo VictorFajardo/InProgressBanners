@@ -61,7 +61,6 @@ window.onload = function() {
   matrix = matrix.sort(function() { return .5 - Math.random(); });
   matrix = [].concat(matrix, blackText.slice(whiteText.length));
   matrix = [].concat(introText, matrix);
-  introLabels = ['How','did', 'this', 'happen?'];
   
   matrix.forEach(function(point, i) {
     var el = document.createElement('div');
@@ -110,11 +109,11 @@ window.onload = function() {
   TweenLite.to(container, 3, { x: -94, y: -59, ease: Power2.easeOut, delay: 2 }, 0);
   TweenLite.to(container, 1, { scale: .4582, ease: Power0.easeNone, delay: 2 }, 0);
   TweenLite.to(text1, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4 }, 0);
+  TweenLite.to([bgCanvas, maskCanvas], 5.5, { x: -9, y: 15, scale: .75, ease: Power2.easeOut, delay: 5.5 }, 0);
+  TweenLite.to(container, 5.5, { x: -103, y: -44, scale: .4142, ease: Power2.easeOut, delay: 5.5 }, 0);
   TweenLite.to(text1, 1, { opacity: 0, ease: Power2.easeOut, delay: 6.5 }, 0);
+  TweenLite.to(params, 3, { mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.5 }, 0);
   TweenLite.to(text2, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 7 }, 0);
-  TweenLite.to(params, 3, { mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.6 }, 0);
-  TweenLite.to([bgCanvas, maskCanvas], 3, { x: -9, y: 15, scale: .75, ease: Power2.easeOut, delay: 6.6 }, 0);
-  TweenLite.to(container, 3, { x: -103, y: -44, scale: .4142, ease: Power2.easeOut, delay: 6.6 }, 0);
   TweenLite.to([text1, text2], .5, { opacity: 0, ease: Power2.easeOut, delay: 11 }, 0);
   TweenLite.to(text3, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5 }, 0);
   TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
