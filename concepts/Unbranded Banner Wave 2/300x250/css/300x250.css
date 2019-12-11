@@ -104,11 +104,7 @@ canvas {
     left: -175px;
     width: 670px;
     height: 599px;
-    /* background: url('../img/words.png'), url('../img/intro.svg'); */
-    /* background-position: 0 0; */
     background-repeat: no-repeat;
-    /* background-position: -289.51px -360.25px; */
-    /* opacity: .2; */
     transform: scale(.63);
 }
 .words {
@@ -125,32 +121,3 @@ canvas {
     background-size: 670px 599px;
     opacity: 0;
 }
-
-/* For Development */
-/* #toCopy {
-    opacity: 0;
-}
-input[type=number]{
-    width: 40px;
-} 
-input[type=text]{
-    width: 200px;
-}
-button:focus {
-    background-color: darkorange;
-}
-.buttons {
-    position: absolute;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, .5);
-}
-canvas {
-    opacity: 1 !important;
-    top: 0;
-    left: 0;
-}
-
-#wrapper, #banner {
-    width: 670px;
-    height: 599px;
-} */

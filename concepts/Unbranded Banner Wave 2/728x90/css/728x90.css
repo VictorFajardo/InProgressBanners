@@ -20,71 +20,76 @@
     width: 726px;
     height: 88px;
     overflow: hidden;
-    background: radial-gradient(ellipse, #E5A314, #E5A314, #D19432);
+    background-image: url('../img/bg.jpeg');
 }
 /* Frames */
 
-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer, #click-area {
+canvas, #text1, #text2, #text3, #text4, #text5, #cta, #pfizer, #click-area {
     position: absolute;
 }
-#bg-canvas, #text1, #text2, #text3, #text4, #cta, #pfizer {
+#bg-canvas, #text1, #text2, #text3, #text4, #text5, #cta, #pfizer {
     opacity: 0;
 }
 canvas {
-    top: -101px;
-    left: -55px;
-    transform: scale(.9);
+    top: -95px;
+    left: -58px;
+    transform: scale(.9416);
 }
 #text1 {
-    top: 10px;
-    left: 234px;
-    font-size: 17px;
+    top: 36px;
+    left: 259px;
+    font-size: 22px;
     text-align: left;
     line-height: 21px;
 }
 #text2 {
-  top: 52px;
-      left: 235px;
-      font-size: 17px;
-      text-align: left;
-      line-height: 21px;
-      font-weight: 700;
+    top: 36px;
+    left: 259px;
+    font-size: 23px;
+    text-align: left;
+    line-height: 21px;
 }
 #text3 {
   top: 25px;
-  left: 235px;
+  left: 114px;
   font-size: 17px;
   text-align: left;
   line-height: 21px;
 }
 #text4 {
-  top: 56px;
-  right: 98px;
-  font-size: 11px;
-  text-align: left;
-  line-height: 20px;
-  font-weight: 700;
+    top: 52px;
+    left: 467px;
+    font-size: 11px;
+    text-align: left;
+    line-height: 20px;
+    font-weight: 700;
+}
+#text5 {
+    top: 73px;
+    left: 614px;
+    font-size: 8px;
+    font-weight: 700;
 }
 #pfizer {
-    top: 40px;
-    left: 675px;
+    top: 67px;
+    left: 688px;
     width: 29px;
     height: 17px;
     background: url(../img/pfizer.svg) center center no-repeat;
 }
 #cta {
-  top: 20px;
-      left: 501px;
-      width: 130px;
-      height: 32px;
-      font-size: 13px;
-      border-radius: 1px;
-      background: #ffffff;
-      color: #d8a13a;
-      line-height: 32px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 600;
+    top: 16px;
+    left: 467px;
+    width: 130px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 1px;
+    background: #ffffff;
+    color: #8bc5b1;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
 }
 #click-area {
     width: 726px;
@@ -94,24 +99,13 @@ canvas {
 #container {
     transform: translate(-50%, -50%);
     position: absolute;
-    top: -331px;
-    left: -75px;
-    width: 878px;
-    height: 759px;
-    /* background: url('../img/words.png'), url('../img/intro.svg'); */
-    /* background-position: 0 0; */
+    top: -207px;
+    left: 36px;
+    width: 670px;
+    height: 599px;
     background-repeat: no-repeat;
-    /* background-position: -289.51px -360.25px; */
-    /* opacity: .2; */
-    transform: scale(.318);
+    transform: scale(0.475);
 }
-/* #vertical {
-    position: absolute;
-    left: 335px;
-    width: 1px;
-    height: 100%;
-    background-color: #000;
-} */
 .words {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -123,6 +117,6 @@ canvas {
     position: absolute;
     transform: translate(-50%, -50%);
     background-image: url('../img/intro.svg');
-    background-size: 878px 759px;
+    background-size: 670px 599px;
     opacity: 0;
 }

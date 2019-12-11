@@ -111,20 +111,21 @@ window.onload = function() {
     }
     TweenLite.to(el, params.aniTime, {x: - el.dataset.inix, y: - el.dataset.iniy, scale: 1, opacity: i < introText.length ? .65 : 1, transformOrigin: "50% 50%", force3D:true, rotationZ:"0.1deg", translateZ:-100, ease: Power1.easeOut, delay: params.delay + i * (params.loopTime / arr.length)}, 0);
   });
-  TweenLite.to(bgCanvas, 1.9, {opacity: .2, ease: Power0.easeNone, delay: 4.6}, 0);
-  TweenLite.to(container, 3, {y: 45, ease: Power2.easeOut, delay: 2}, 0);
-  TweenLite.to(container, 1, {scale: .66, ease: Power0.easeNone, delay: 2}, 0);
-  TweenLite.to(text1, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4}, 0);
-  TweenLite.to(text2, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 7}, 0);
-  TweenLite.to(params, 3, {mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 5}, 0);
-  TweenLite.to([bgCanvas, maskCanvas], 3, {x: -13, y: 29, scale: 1.01, ease: Power2.easeOut, delay: 6.6}, 0);
-  TweenLite.to(container, 3, {x: -13, y: 73.5, scale: .5578, ease: Power2.easeOut, delay: 6.6}, 0);
-  TweenLite.to([text1, text2], .5, {opacity: 0, ease: Power2.easeOut, delay: 11}, 0);
-  TweenLite.to(text3, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5}, 0);
+  TweenLite.to(bgCanvas, 2.5, { opacity: .2, ease: Power0.easeNone, delay: 3 }, 0);
+  TweenLite.to(container, 3, { y: 45, ease: Power2.easeOut, delay: 2 }, 0);
+  TweenLite.to(container, 1, { scale: .66, ease: Power0.easeNone, delay: 2 }, 0);
+  TweenLite.to(text1, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 4.4 }, 0);
+  TweenLite.to([bgCanvas, maskCanvas], 5.5, { x: -13, y: 29, scale: 1.01, ease: Power2.easeOut, delay: 5.5 }, 0);
+  TweenLite.to(container, 5.5, { x: -13, y: 73.5, scale: .5578, ease: Power2.easeOut, delay: 5.5 }, 0);
+  TweenLite.to(text1, 1, { opacity: 0, ease: Power2.easeOut, delay: 6.5 }, 0);
+  TweenLite.to(params, 3, { mask: 0, ease: Power0.easeNone, onUpdate: movingMask, delay: 6.5 }, 0);
+  TweenLite.to(text2, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 7 }, 0);
+  TweenLite.to([text1, text2], .5, { opacity: 0, ease: Power2.easeOut, delay: 11 }, 0);
+  TweenLite.to(text3, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 11.5 }, 0);
   TweenLite.set(cta, {opacity: 1, scale: .1, delay: 12}, 0);
   TweenLite.to(cta, 1, {scale: 1, ease: Back.easeOut, delay: 12}, 0);
-  TweenLite.to(shade, .5, {opacity: 1, ease: Power2.easeOut, delay: 7.3}, 0);
-  TweenLite.to(text4, 1, {opacity: 1, x: 0, ease: Power2.easeOut, delay: 13}, 0);
-  TweenLite.to(pfizer, 1, {opacity: 1, ease: Power2.easeOut, delay: 13}, 0);
+  TweenLite.to(text4, 1, { opacity: 1, x: 0, ease: Power2.easeOut, delay: 13 }, 0);
+  TweenLite.to([text5, pfizer], 1, { opacity: 1, ease: Power2.easeOut, delay: 13 }, 0);
+  TweenLite.set(params, { loop: 1, delay: 15 }, 0);
 
 }//end
